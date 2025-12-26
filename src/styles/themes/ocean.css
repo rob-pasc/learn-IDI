@@ -1,0 +1,34 @@
+/* Ocean theme (cool blues & cyan, clean & focused)
+   Base tokens = HEX
+   Derived tokens = color-mix(in oklab, ...)
+*/
+
+:root[data-theme="ocean"] {
+  /* -------- Base tokens (HEX) -------- */
+  --bg: #0b1420;           /* deep ocean night */
+  --surface: #101e2e;      /* cards / panels */
+  --surface-2: #0e1a29;
+  --text: #e6f0f7;         /* airy light text */
+  --muted: #9fb6c8;        /* misty blue */
+  --border: #22384f;       /* ocean border */
+
+  --primary: #38bdf8;      /* bright cyan-blue */
+  --accent: #22d3ee;       /* turquoise accent */
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #60a5fa;
+
+  --focus: #7dd3fc;
+  --shadow-color: #000000;
+
+  --code-bg: #0a1624;
+  --code-border: #22384f;
+  --code-text: #e6f0f7;
+
+  /* Code accents (ocean-y & crisp) */
+  --code-keyword: #93c5fd; /* light blue */
+  --code-string: #67e8f9;  /* cyan */
+  --code-func: #5eead4;    /* teal */
+  --code-type: #c7d2fe;    /* lavender blue */
+  --code-comment: #6b8fa8; /* muted sea */
+}

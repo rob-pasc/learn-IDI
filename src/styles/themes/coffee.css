@@ -1,0 +1,35 @@
+/* src/styles/theme-coffee.css
+   Coffee theme (warm, cozy, latte vibes)
+   Base tokens = HEX
+   Derived tokens = color-mix(in oklab, ...)
+*/
+
+:root[data-theme="coffee"] {
+  /* -------- Base tokens (HEX) -------- */
+  --bg: #14110f;           /* espresso background */
+  --surface: #1c1714;      /* card surface */
+  --surface-2: #191411;    /* flatter surface */
+  --text: #f3ede7;         /* creamy text */
+  --muted: #c3b3a6;        /* warm muted */
+  --border: #3a2f27;       /* coffee-bean border */
+
+  --primary: #c08457;      /* caramel */
+  --accent: #f59e0b;       /* honey */
+  --danger: #ef4444;
+  --warning: #fbbf24;      /* slightly brighter warm warning */
+  --info: #38bdf8;
+
+  --focus: #f3c29a;        /* warm focus ring */
+  --shadow-color: #000000;
+
+  --code-bg: #120f0d;
+  --code-border: #3a2f27;
+  --code-text: #f3ede7;
+
+  /* Code accents (warm, readable) */
+  --code-keyword: #f472b6; /* pink-ish like VS Code keywords */
+  --code-string: #fde68a;  /* creamy yellow */
+  --code-func: #fca5a5;    /* soft red */
+  --code-type: #93c5fd;    /* soft blue */
+  --code-comment: #8a786c; /* cocoa muted */
+}
