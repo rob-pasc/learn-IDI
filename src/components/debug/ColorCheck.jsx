@@ -182,3 +182,78 @@ export default function ColorCheck({
     </div>
   );
 }
+
+
+
+
+  // return (
+  //   <div className="App">
+  //     <ColorCheck
+  //       theme={theme}
+  //       setTheme={setTheme}
+  //       activeThemeLabel={activeThemeLabel}
+  //       ThemeToggle={ThemeToggle}
+  //       Swatch={Swatch}
+  //       BoltIcon={BoltIcon}
+  //       SparkleIcon={SparkleIcon}
+  //       ShieldIcon={ShieldIcon}
+  //       PaletteIcon={PaletteIcon}
+  //     />
+  //   </div>
+  // );
+
+
+  
+function BoltIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M13 2L3 14h8l-1 8l11-14h-8l0-6Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function SparkleIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 2l1.2 4.3L17.5 8l-4.3 1.2L12 13.5l-1.2-4.3L6.5 8l4.3-1.7L12 2Zm7 8l.8 2.2L22 13l-2.2.8L19 16l-.8-2.2L16 13l2.2-.8L19 10Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function ShieldIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 2l8 4v6c0 5-3.5 9.5-8 10c-4.5-.5-8-5-8-10V6l8-4Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function PaletteIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 3a9 9 0 1 0 0 18h2a2 2 0 0 0 0-4h-1a2 2 0 0 1 0-4h2.5A3.5 3.5 0 0 0 12 3Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="8" cy="10" r="1" fill="currentColor" />
+      <circle cx="12" cy="8" r="1" fill="currentColor" />
+      <circle cx="16" cy="10" r="1" fill="currentColor" />
+      <circle cx="9" cy="14" r="1" fill="currentColor" />
+    </svg>
+  );
+}
