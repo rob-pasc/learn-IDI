@@ -1,0 +1,219 @@
+{
+  "semester": "Sem1",
+  "title": "Semester 1",
+  "events": [
+    {
+      "id": "sem1-2025-11-25-rel-db",
+      "date": "2025-11-25",
+      "weekday": "Dienstag",
+      "title": "Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["rel_db", "hybrid"]
+    },
+    {
+      "id": "sem1-2025-11-29-rel-db",
+      "date": "2025-11-29",
+      "weekday": "Samstag",
+      "title": "Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["rel_db", "online"]
+    },
+    {
+      "id": "sem1-2025-12-02-rel-db",
+      "date": "2025-12-02",
+      "weekday": "Dienstag",
+      "title": "Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["rel_db", "hybrid"]
+    },
+    {
+      "id": "sem1-2025-12-06-webfe",
+      "date": "2025-12-06",
+      "weekday": "Samstag",
+      "title": "Web-Front-End",
+      "course": "webdesign",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["webdesign", "online"]
+    },
+    {
+      "id": "sem1-2025-12-09-webfe",
+      "date": "2025-12-09",
+      "weekday": "Dienstag",
+      "title": "Web-Front-End",
+      "course": "webdesign",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["webdesign", "hybrid"]
+    },
+    {
+      "id": "sem1-2025-12-13-rel-db",
+      "date": "2025-12-13",
+      "weekday": "Samstag",
+      "title": "Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["rel_db", "online"]
+    },
+    {
+      "id": "sem1-2025-12-16-rel-db",
+      "date": "2025-12-16",
+      "weekday": "Dienstag",
+      "title": "Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["rel_db", "hybrid"]
+    },
+    {
+      "id": "sem1-2025-12-20-webfe",
+      "date": "2025-12-20",
+      "weekday": "Samstag",
+      "title": "Web-Front-End",
+      "course": "webdesign",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["webdesign", "online"]
+    },
+    {
+      "id": "sem1-2025-12-22-webfe-exam-repeat",
+      "date": "2025-12-22",
+      "weekday": "Montag",
+      "title": "Wiederholungsprüfung Web-Front-End",
+      "course": "webdesign",
+      "kind": "exam",
+      "location": "online",
+      "tags": ["webdesign", "exam", "online"]
+    },
+
+    {
+      "id": "sem1-2025-12-27-xmas-break",
+      "date": "2025-12-27",
+      "weekday": "Samstag",
+      "title": "Weihnachtsferien",
+      "course": "general",
+      "kind": "break",
+      "location": null,
+      "tags": ["break"]
+    },
+    {
+      "id": "sem1-2025-12-30-xmas-break",
+      "date": "2025-12-30",
+      "weekday": "Dienstag",
+      "title": "Weihnachtsferien",
+      "course": "general",
+      "kind": "break",
+      "location": null,
+      "tags": ["break"]
+    },
+    {
+      "id": "sem1-2026-01-03-xmas-break",
+      "date": "2026-01-03",
+      "weekday": "Samstag",
+      "title": "Weihnachtsferien",
+      "course": "general",
+      "kind": "break",
+      "location": null,
+      "tags": ["break"]
+    },
+    {
+      "id": "sem1-2026-01-06-holiday",
+      "date": "2026-01-06",
+      "weekday": "Dienstag",
+      "title": "Feiertag: Heilige Drei Könige",
+      "course": "general",
+      "kind": "holiday",
+      "location": null,
+      "tags": ["holiday"]
+    },
+
+    {
+      "id": "sem1-2026-01-10-rel-db",
+      "date": "2026-01-10",
+      "weekday": "Samstag",
+      "title": "Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["rel_db", "online"]
+    },
+    {
+      "id": "sem1-2026-01-12-rel-db-exam",
+      "date": "2026-01-12",
+      "weekday": "Montag",
+      "title": "Prüfung Relationale Datenbanken",
+      "course": "rel_db",
+      "kind": "exam",
+      "location": null,
+      "tags": ["rel_db", "exam"]
+    },
+
+    {
+      "id": "sem1-2026-01-13-prog",
+      "date": "2026-01-13",
+      "weekday": "Dienstag",
+      "title": "Einführung Programmieren",
+      "course": "prog",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["prog", "hybrid"]
+    },
+    {
+      "id": "sem1-2026-01-17-prog",
+      "date": "2026-01-17",
+      "weekday": "Samstag",
+      "title": "Einführung Programmieren",
+      "course": "prog",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["prog", "online"]
+    },
+    {
+      "id": "sem1-2026-01-20-prog",
+      "date": "2026-01-20",
+      "weekday": "Dienstag",
+      "title": "Einführung Programmieren",
+      "course": "prog",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["prog", "hybrid"]
+    },
+    {
+      "id": "sem1-2026-01-24-prog",
+      "date": "2026-01-24",
+      "weekday": "Samstag",
+      "title": "Einführung Programmieren",
+      "course": "prog",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["prog", "online"]
+    },
+    {
+      "id": "sem1-2026-01-27-prog",
+      "date": "2026-01-27",
+      "weekday": "Dienstag",
+      "title": "Einführung Programmieren",
+      "course": "prog",
+      "kind": "session",
+      "location": "hybrid (FHV & MS Teams)",
+      "tags": ["prog", "hybrid"]
+    },
+    {
+      "id": "sem1-2026-01-31-prog",
+      "date": "2026-01-31",
+      "weekday": "Samstag",
+      "title": "Einführung Programmieren",
+      "course": "prog",
+      "kind": "session",
+      "location": "online via MS Teams",
+      "tags": ["prog", "online"]
+    }
+  ]
+}

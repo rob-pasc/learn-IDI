@@ -1,0 +1,268 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+}
+
+.h2 {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: 1.2rem;
+  letter-spacing: 0.2px;
+}
+
+.subtle {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.toggle {
+  display: flex;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.toggleBtn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.toggleBtnActive {
+  background: var(--primary-soft);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--primary-soft-border);
+}
+
+.body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.monthBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.monthTitle {
+  font-weight: 800;
+  color: var(--text-strong);
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.dateCol {
+  border-right: 1px solid var(--border-subtle);
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 54px;
+}
+
+.dateMain {
+  font-weight: 900;
+  color: var(--text-strong);
+  font-size: 1.05rem;
+}
+
+.dateSub {
+  color: var(--muted);
+  margin-top: 2px;
+  font-size: 0.9rem;
+}
+
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.titleLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.title {
+  font-weight: 800;
+  color: var(--text-strong);
+  line-height: 1.2;
+}
+
+.kindBadge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.metaLine {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.metaPill {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in oklab, var(--surface) 85%, var(--bg));
+}
+
+.metaPillMuted {
+  opacity: 0.7;
+}
+
+.tagsWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+}
+
+.badgePrimarySoft {
+  background: var(--primary-soft);
+  border-color: var(--primary-soft-border);
+  color: var(--text);
+}
+
+.badgeWarning {
+  background: var(--warning-soft);
+  border-color: color-mix(in oklab, var(--warning) 35%, var(--border));
+  color: var(--text);
+}
+
+.badgeInfo {
+  background: var(--info-soft);
+  border-color: color-mix(in oklab, var(--info) 35%, var(--border));
+  color: var(--text);
+}
+
+.badgeInfoSoft {
+  background: color-mix(in oklab, var(--info-soft) 65%, var(--surface));
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.empty {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+}
+
+.emptyTitle {
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.emptyText {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.notice {
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.monthNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.monthPill {
+  min-width: 180px;
+  text-align: center;
+  font-weight: 900;
+  color: var(--text-strong);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 85%, var(--bg));
+  box-shadow: var(--shadow-sm);
+}
+
+.navBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: background 120ms ease, border-color 120ms ease, opacity 120ms ease;
+}
+
+.navBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

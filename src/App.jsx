@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import THEMES from "./themeData";
 
 import "./styles/global.css";
 import "./styles/themes/vscode-dark.css";
@@ -10,13 +9,21 @@ import "./styles/themes/coffee.css";
 import "./styles/themes/ocean.css";
 
 // import ColorCheck from "./components/debug/ColorCheck";
-import Layout from "./Layout";
+import Layout from "./components/layout/Layout";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Docs from "./pages/Docs";
+import NotFound from "./pages/NotFound";
 
-function Home() { return <h1>Home</h1>; }
-function Profile() { 
-  return <a target="_blank" href="https://fhvorarlberg-my.sharepoint.com/:u:/g/personal/korp_fhv_at/IQBfyQ81H4j2TqJpZ4jGTPX2AaD1Xnax-70XyoYWAfu-ZmE?e=UBzBhq" download >Download</a>
-}
-function NotFound() { return <h1>404</h1>; }
+import { SunIcon, MoonStarsIcon, LeafIcon, CoffeeIcon, WaveIcon } from "./components/Icons";
+
+
+const THEMES = [
+  { id: "pastel", label: "Pastel (Light)", Icon: SunIcon },
+  { id: "vscode-dark", label: "VS Code-like (Dark)", Icon: MoonStarsIcon },
+  { id: "forest", label: "Forest", Icon: LeafIcon },
+  { id: "coffee", label: "Coffee", Icon: CoffeeIcon },
+  { id: "ocean", label: "Ocean", Icon: WaveIcon },
+];
 
 export default function App() {
   const [theme, setTheme] = useState("vscode-dark");
@@ -45,8 +52,8 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout theme={theme} setTheme={setTheme} themes={THEMES} />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/docs" element={<Docs />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
