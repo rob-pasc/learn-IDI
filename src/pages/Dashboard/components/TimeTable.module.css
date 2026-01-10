@@ -266,3 +266,114 @@
   opacity: 0.45;
   cursor: not-allowed;
 }
+
+.todayMarker {
+  /* background: color-mix(in oklab, var(--surface-2) 75%, var(--info-soft)); */
+  border-color: color-mix(in oklab, var(--info) 35%, var(--border));
+
+  background: rebeccapurple;            /*TODO*/
+}
+
+.todayEvent {
+  /* background: color-mix(in oklab, var(--surface-2) 75%, var(--primary-soft)); */
+  border-color: var(--primary-soft-border);
+
+  background: rebeccapurple;            /*TODO glow effect?*/
+}
+
+.badgeToday {
+  background: color-mix(in oklab, var(--info-soft) 70%, var(--surface));
+  border-color: color-mix(in oklab, var(--info) 35%, var(--border));
+  color: var(--text);
+}
+
+.monthPicker {
+  position: relative;
+}
+
+.monthPillBtn {
+  min-width: 200px;
+  text-align: center;
+  font-weight: 900;
+  color: var(--text-strong);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 85%, var(--bg));
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.caret {
+  color: var(--muted);
+  font-weight: 900;
+  transform: translateY(-1px);
+}
+
+.monthDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  padding: 0.35rem;
+  z-index: 20;
+}
+
+.monthOption {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  font-weight: 700;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.monthOption:hover {
+  background: var(--surface-hover);
+}
+
+.monthOptionActive {
+  background: var(--primary-soft);
+  border-color: var(--primary-soft-border);
+}
+
+.todayBtn {
+  height: 40px;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  /* background: var(--surface-2); */
+  background: rebeccapurple;            /*TODO*/
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+  transition: background 120ms ease, border-color 120ms ease, opacity 120ms ease;
+}
+
+.todayBtn:hover {
+  background: var(--surface-hover);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}

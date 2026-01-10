@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./TimeTable.module.css";
+import { timeSlotForWeekday, formatDate, formatMonth } from "../../../utils/time";
 
 export default function TimeTable() {
   const [semester, setSemester] = useState("Sem1");
@@ -9,6 +10,12 @@ export default function TimeTable() {
 
   // month key like "YYYY-MM"
   const [monthKey, setMonthKey] = useState(null);
+
+  // dropdown state
+  const [monthOpen, setMonthOpen] = useState(false);
+
+  // for jump-to-today scrolling
+  const listRef = useRef(null);
 
   useEffect(() => {
     Promise.all([
@@ -35,17 +42,30 @@ export default function TimeTable() {
     return Array.from(set).sort(); // YYYY-MM sorted
   }, [eventsSorted]);
 
+  const todayIso = useMemo(() => {        /*TODO: iso function aus time.js verwenden*/
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${y}-${m}-${day}`;
+  }, []);
+
   // Choose default month: current month if present, else first available.
   useEffect(() => {
     if (months.length === 0) {
       setMonthKey(null);
+      setMonthOpen(false);
       return;
     }
 
-    const todayKey = todayMonthKey();
+    const todayKey = todayIso.slice(0, 7);
+
+    // if current selection invalid or missing, set sensible default
     if (!monthKey || !months.includes(monthKey)) {
       setMonthKey(months.includes(todayKey) ? todayKey : months[0]);
     }
+    // close dropdown when semester changes / data changes
+    setMonthOpen(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [semester, months.join("|")]);
 
@@ -58,6 +78,68 @@ export default function TimeTable() {
     if (!monthKey) return [];
     return eventsSorted.filter((e) => e.date.startsWith(monthKey));
   }, [eventsSorted, monthKey]);
+
+  const showTodayMarker = useMemo(() => {
+    if (!monthKey) return false;
+    if (!todayIso.startsWith(monthKey)) return false;
+
+    const hasEventToday = monthEvents.some((e) => e.date === todayIso);
+    return !hasEventToday;
+  }, [monthKey, monthEvents, todayIso]);
+
+  const monthItems = useMemo(() => {
+    const items = monthEvents.map((e) => ({ kind: "event", event: e }));
+
+    if (showTodayMarker) {
+      items.push({ kind: "today", date: todayIso });
+    }
+
+    items.sort((a, b) => {
+      const da = a.kind === "event" ? a.event.date : a.date;
+      const db = b.kind === "event" ? b.event.date : b.date;
+      return da.localeCompare(db);
+    });
+
+    return items;
+  }, [monthEvents, showTodayMarker, todayIso]);
+
+  function handlePrevMonth() {
+    if (monthIndex <= 0) return;
+    setMonthKey(months[monthIndex - 1]);
+    setMonthOpen(false);
+  }
+
+  function handleNextMonth() {
+    if (monthIndex === -1 || monthIndex >= months.length - 1) return;
+    setMonthKey(months[monthIndex + 1]);
+    setMonthOpen(false);
+  }
+
+  function handleJumpToday() {
+    if (!months.length) return;
+
+    const todayKey = todayIso.slice(0, 7);
+
+    // If we have today's month, go there.
+    if (months.includes(todayKey)) {
+      setMonthKey(todayKey);
+      setMonthOpen(false);
+
+      // after render, try to bring today row into view
+      requestAnimationFrame(() => {
+        const el = listRef.current?.querySelector('[data-row="today"]');
+        if (el) el.scrollIntoView({ block: "center", behavior: "smooth" });
+      });
+
+      return;
+    }
+
+    // Otherwise: jump to the closest month (by string distance since format YYYY-MM is sortable)
+    // Choose the first month after today if possible, else the last month before today.
+    const after = months.find((m) => m > todayKey);
+    setMonthKey(after ?? months[months.length - 1]);
+    setMonthOpen(false);
+  }
 
   if (error) {
     return <div className={styles.notice}>{error}</div>;
@@ -116,7 +198,7 @@ export default function TimeTable() {
               <button
                 type="button"
                 className={styles.navBtn}
-                onClick={() => setMonthKey(months[monthIndex - 1])}
+                onClick={handlePrevMonth}
                 disabled={monthIndex <= 0}
                 aria-label="Vorheriger Monat"
                 title="Vorheriger Monat"
@@ -124,14 +206,57 @@ export default function TimeTable() {
                 ←
               </button>
 
-              <div className={styles.monthPill} aria-label="Aktueller Monat">
-                {monthKey ? formatMonth(monthKey) : "—"}
+              <div className={styles.monthPicker}>
+                <button
+                  type="button"
+                  className={styles.monthPillBtn}
+                  onClick={() => setMonthOpen((v) => !v)}
+                  aria-haspopup="listbox"
+                  aria-expanded={monthOpen}
+                  title="Monat auswählen"
+                >
+                  {monthKey ? formatMonth(monthKey) : "—"}{" "}
+                  <span className={styles.caret}>▾</span>
+                </button>
+
+                {monthOpen && (
+                  <div className={styles.monthDropdown} role="listbox">
+                    {months.map((m) => {
+                      const active = m === monthKey;
+                      return (
+                        <button
+                          key={m}
+                          type="button"
+                          className={`${styles.monthOption} ${
+                            active ? styles.monthOptionActive : ""
+                          }`}
+                          onClick={() => {
+                            setMonthKey(m);
+                            setMonthOpen(false);
+                          }}
+                          aria-selected={active}
+                        >
+                          {formatMonth(m)}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
               <button
                 type="button"
+                className={styles.todayBtn}
+                onClick={handleJumpToday}
+                title="Zum heutigen Datum springen"
+              >
+                Heute
+              </button>
+
+              <button
+                type="button"
                 className={styles.navBtn}
-                onClick={() => setMonthKey(months[monthIndex + 1])}
+                onClick={handleNextMonth}
                 disabled={monthIndex === -1 || monthIndex >= months.length - 1}
                 aria-label="Nächster Monat"
                 title="Nächster Monat"
@@ -141,23 +266,65 @@ export default function TimeTable() {
             </div>
 
             {/* Month content */}
-            <div className={styles.list}>
-              {monthEvents.map((e) => (
-                <EventRow key={e.id} e={e} />
-              ))}
+            <div className={styles.list} ref={listRef}>
+              {monthItems.map((it) => {
+                if (it.kind === "today") {
+                  return (
+                    <article
+                      key={`today-${it.date}`}
+                      className={`${styles.row} ${styles.todayMarker}`}
+                      data-row="today"
+                    >
+                      <div className={styles.dateCol}>
+                        <div className={styles.dateMain}>{formatDate(it.date)}</div>
+                        <div className={styles.dateSub}>Heute</div>
+                      </div>
+
+                      <div className={styles.mainCol}>
+                        <div className={styles.titleLine}>
+                          <span className={styles.title}>Heute</span>
+                          <span className={`${styles.kindBadge} ${styles.badgeToday}`}>
+                            Marker
+                          </span>
+                        </div>
+
+                        <div className={styles.metaLine}>
+                          <span className={styles.metaPill}>📌 Orientierung im Zeitplan</span>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                }
+
+                const e = it.event;
+                const isTodayEvent = e.date === todayIso;
+
+                return <EventRow key={e.id} e={e} isToday={isTodayEvent} />;
+              })}
             </div>
           </>
         )}
       </div>
+
+      {/* click-away overlay for dropdown */}
+      {monthOpen && (
+        <button
+          type="button"
+          className={styles.backdrop}
+          aria-label="Dropdown schließen"
+          onClick={() => setMonthOpen(false)}
+        />
+      )}
     </section>
   );
 }
 
-function EventRow({ e }) {
+function EventRow({ e, isToday = false }) {
   const badge = kindBadge(e.kind);
+  const slot = e.kind === "session" ? timeSlotForWeekday(e.weekday) : null;
 
   return (
-    <article className={styles.row}>
+    <article className={`${styles.row} ${isToday ? styles.todayEvent : ""}`} data-row={isToday ? "today" : undefined}>
       <div className={styles.dateCol}>
         <div className={styles.dateMain}>{formatDate(e.date)}</div>
         <div className={styles.dateSub}>{e.weekday}</div>
@@ -166,20 +333,18 @@ function EventRow({ e }) {
       <div className={styles.mainCol}>
         <div className={styles.titleLine}>
           <span className={styles.title}>{e.title}</span>
-          <span className={`${styles.kindBadge} ${badge.className}`}>
-            {badge.label}
-          </span>
+          <span className={`${styles.kindBadge} ${badge.className}`}>{badge.label}</span>
         </div>
 
         <div className={styles.metaLine}>
+          {slot ? <span className={styles.metaPill}>⏰ {slot}</span> : null}
+
           {e.location ? (
             <span className={styles.metaPill}>
               {locationIcon(e.location)} {e.location}
             </span>
           ) : (
-            <span className={`${styles.metaPill} ${styles.metaPillMuted}`}>
-              —
-            </span>
+            <span className={`${styles.metaPill} ${styles.metaPillMuted}`}>—</span>
           )}
 
           <span className={styles.tagsWrap}>
@@ -214,37 +379,4 @@ function locationIcon(loc) {
   if (s.includes("teams") || s.includes("online")) return "🌐";
   if (s.includes("fhv")) return "🏫";
   return "📍";
-}
-
-function formatDate(iso) {
-  // iso: YYYY-MM-DD
-  const [y, m, d] = iso.split("-");
-  return `${d}.${m}.${y}`;
-}
-
-function formatMonth(yyyyMm) {
-  const [y, m] = yyyyMm.split("-");
-  const names = [
-    "Jänner",
-    "Februar",
-    "März",
-    "April",
-    "Mai",
-    "Juni",
-    "Juli",
-    "August",
-    "September",
-    "Oktober",
-    "November",
-    "Dezember",
-  ];
-  const idx = Number(m) - 1;
-  return `${names[idx] ?? m} ${y}`;
-}
-
-function todayMonthKey() {
-  const now = new Date();
-  const y = now.getFullYear();
-  const m = String(now.getMonth() + 1).padStart(2, "0");
-  return `${y}-${m}`;
 }
