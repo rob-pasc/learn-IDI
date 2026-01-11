@@ -1,77 +1,116 @@
-:root {
-  --radius: 14px;
-  --radius-sm: 10px;
-  --space-1: 0.5rem;
-  --space-2: 0.75rem;
-  --space-3: 1rem;
-  --space-4: 1.5rem;
+@layer reset, base-tokens, themes, derived-tokens, base, components, utilities, overrides;
 
-  /* -------- Derived tokens (OKLab mixing) --------
-
-  /* Surfaces */
-  --surface-elevated: color-mix(in oklab, var(--surface) 82%, white);
-  --surface-hover: color-mix(in oklab, var(--surface) 88%, var(--primary));
-  --surface-pressed: color-mix(in oklab, var(--surface) 90%, black);
-
-  /* Text */
-  --text-strong: color-mix(in oklab, var(--text) 92%, white);
-  --text-subtle: color-mix(in oklab, var(--muted) 80%, var(--text));
-
-  /* Borders */
-  --border-strong: color-mix(in oklab, var(--border) 70%, var(--text));
-  --border-subtle: color-mix(in oklab, var(--border) 70%, var(--bg));
-
-  /* Primary states */
-  --primary-hover: color-mix(in oklab, var(--primary) 85%, white);
-  --primary-pressed: color-mix(in oklab, var(--primary) 85%, black);
-  --primary-soft: color-mix(in oklab, var(--primary) 18%, var(--surface));
-  --primary-soft-border: color-mix(in oklab, var(--primary) 35%, var(--border));
-
-  /* Accent states */
-  --accent-hover: color-mix(in oklab, var(--accent) 85%, white);
-  --accent-soft: color-mix(in oklab, var(--accent) 18%, var(--surface));
-  --accent-soft-border: color-mix(in oklab, var(--accent) 35%, var(--border));
-
-  /* Semantic soft backgrounds */
-  --danger-soft: color-mix(in oklab, var(--danger) 16%, var(--surface));
-  --warning-soft: color-mix(in oklab, var(--warning) 16%, var(--surface));
-  --info-soft: color-mix(in oklab, var(--info) 16%, var(--surface));
-
-  /* Focus ring */
-  --focus-ring: color-mix(in oklab, var(--focus) 60%, white);
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px color-mix(in oklab, var(--shadow-color) 35%, transparent);
-  --shadow-md: 0 8px 22px color-mix(in oklab, var(--shadow-color) 45%, transparent);
-
-  /* Inputs */
-  --input-bg: color-mix(in oklab, var(--surface) 88%, var(--bg));
-  --input-border: color-mix(in oklab, var(--border) 85%, var(--bg));
-  --input-border-focus: color-mix(in oklab, var(--primary) 55%, var(--border));
-
-  /* Links */
-  --link: color-mix(in oklab, var(--info) 80%, white);
-  --link-hover: color-mix(in oklab, var(--link) 85%, white);
+@layer reset {
+  *,
+  *::before,
+  *::after { 
+    box-sizing: border-box; 
+  }
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+@layer base-tokens {
+  :root {
+    --radius: 14px;
+    --radius-sm: 10px;
+    --space-1: 0.5rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+  }
 }
 
+/* applied themes layer found in "./themes" subfolder */
 
-* { box-sizing: border-box; }
+@layer derived-tokens {
+  :root {
+    /* -------- Derived tokens (OKLab mixing) -------- */
 
-a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link-hover); text-decoration: underline; }
+    /* Surfaces */
+    --surface-elevated: color-mix(in oklab, var(--surface) 82%, white);
+    --surface-hover: color-mix(in oklab, var(--surface) 88%, var(--primary));
+    --surface-pressed: color-mix(in oklab, var(--surface) 90%, black);
 
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 2rem 1.25rem;
+    /* Text */
+    --text-strong: color-mix(in oklab, var(--text) 92%, white);
+    --text-subtle: color-mix(in oklab, var(--muted) 80%, var(--text));
+
+    /* Borders */
+    --border-strong: color-mix(in oklab, var(--border) 70%, var(--text));
+    --border-subtle: color-mix(in oklab, var(--border) 70%, var(--bg));
+
+    /* Primary states */
+    --primary-hover: color-mix(in oklab, var(--primary) 85%, white);
+    --primary-pressed: color-mix(in oklab, var(--primary) 85%, black);
+    --primary-soft: color-mix(in oklab, var(--primary) 18%, var(--surface));
+    --primary-soft-border: color-mix(in oklab, var(--primary) 35%, var(--border));
+
+    /* Accent states */
+    --accent-hover: color-mix(in oklab, var(--accent) 85%, white);
+    --accent-soft: color-mix(in oklab, var(--accent) 18%, var(--surface));
+    --accent-soft-border: color-mix(in oklab, var(--accent) 35%, var(--border));
+
+    /* Semantic soft backgrounds */
+    --danger-soft: color-mix(in oklab, var(--danger) 16%, var(--surface));
+    --warning-soft: color-mix(in oklab, var(--warning) 16%, var(--surface));
+    --info-soft: color-mix(in oklab, var(--info) 16%, var(--surface));
+
+    /* Focus ring */
+    --focus-ring: color-mix(in oklab, var(--focus) 60%, white);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px color-mix(in oklab, var(--shadow-color) 35%, transparent);
+    --shadow-md: 0 8px 22px color-mix(in oklab, var(--shadow-color) 45%, transparent);
+
+    /* Inputs */
+    --input-bg: color-mix(in oklab, var(--surface) 88%, var(--bg));
+    --input-border: color-mix(in oklab, var(--border) 85%, var(--bg));
+    --input-border-focus: color-mix(in oklab, var(--primary) 55%, var(--border));
+
+    /* Links */
+    --link: color-mix(in oklab, var(--info) 80%, white);
+    --link-hover: color-mix(in oklab, var(--link) 85%, white);
+  }
 }
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  a { 
+    color: var(--link); 
+    text-decoration: none; 
+
+    &:hover { 
+      color: var(--link-hover); 
+      text-decoration: underline; 
+    }
+  }
+
+  ::selection {
+    background-color: coral;
+  }
+}
+
+/* components layer used in the css modules for all component classes */
+
+@layer utilities {
+  .u-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .u-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .u-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .u-mb-3 { margin-bottom: var(--space-3); }
+}
+
+/* overrides layer used in the css modules for specific overrides */
 
 .card {
   background: var(--surface);
@@ -81,8 +120,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   padding: var(--space-4);
 }
 
-.row { display: flex; gap: 1rem; flex-wrap: wrap; }
-.stack { display: flex; flex-direction: column; gap: 0.75rem; }
+
 
 .badge {
   display: inline-flex;

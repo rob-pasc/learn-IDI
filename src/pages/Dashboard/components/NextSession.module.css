@@ -1,196 +1,198 @@
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
+@layer components {
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
 
-.header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: var(--space-4);
-  border-bottom: 1px solid var(--border-subtle);
-  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
-}
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+    background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  }
 
-.h2 {
-  margin: 0;
-  color: var(--text-strong);
-  font-size: 1.2rem;
-  letter-spacing: 0.2px;
-}
+  .h2 {
+    margin: 0;
+    color: var(--text-strong);
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
+  }
 
-.subtle {
-  margin: 0.35rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
+  .subtle {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
 
-.body {
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+  .body {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-.topLine {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  box-shadow: var(--shadow-sm);
-}
+  .topLine {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-sm);
+  }
 
-.titleWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  min-width: 0;
-}
+  .titleWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    min-width: 0;
+  }
 
-.title {
-  font-weight: 900;
-  color: var(--text-strong);
-  font-size: 1.1rem;
-  line-height: 1.2;
-}
+  .title {
+    font-weight: 900;
+    color: var(--text-strong);
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
 
-.meta {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
+  .meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
-.metaPill {
-  font-size: 0.85rem;
-  color: var(--text-subtle);
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  background: color-mix(in oklab, var(--surface) 85%, var(--bg));
-}
+  .metaPill {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: color-mix(in oklab, var(--surface) 85%, var(--bg));
+  }
 
-.metaPillMuted {
-  font-size: 0.85rem;
-  color: var(--muted);
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  opacity: 0.8;
-}
+  .metaPillMuted {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    opacity: 0.8;
+  }
 
-.rightCol {
-  min-width: 120px;
-  border-left: 1px solid var(--border-subtle);
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
+  .rightCol {
+    min-width: 120px;
+    border-left: 1px solid var(--border-subtle);
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
 
-.countdownLabel {
-  color: var(--muted);
-  font-weight: 800;
-  font-size: 0.85rem;
-}
+  .countdownLabel {
+    color: var(--muted);
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
 
-.countdownValue {
-  color: var(--text-strong);
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-top: 0.25rem;
-}
+  .countdownValue {
+    color: var(--text-strong);
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+  }
 
-.tagsRow {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
+  .tagsRow {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
 
-.tag {
-  font-size: 0.82rem;
-  color: var(--muted);
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  background: transparent;
-}
+  .tag {
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+  }
 
-.actions {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
+  .actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
 
-.btnPrimary {
-  border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--border));
-  background: var(--primary);
-  color: white;
-  border-radius: var(--radius-sm);
-  padding: 0.55rem 0.9rem;
-  cursor: pointer;
-  font-weight: 800;
-  transition: transform 0.06s ease, background 0.15s ease, border-color 0.15s ease;
-}
+  .btnPrimary {
+    border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--border));
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius-sm);
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+    font-weight: 800;
+    transition: transform 0.06s ease, background 0.15s ease, border-color 0.15s ease;
+  }
 
-.btnPrimary:hover {
-  background: var(--primary-hover);
-}
+  .btnPrimary:hover {
+    background: var(--primary-hover);
+  }
 
-.btnPrimary:active {
-  transform: translateY(1px);
-  background: var(--primary-pressed);
-}
+  .btnPrimary:active {
+    transform: translateY(1px);
+    background: var(--primary-pressed);
+  }
 
-.btnGhost {
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  border-radius: var(--radius-sm);
-  padding: 0.55rem 0.9rem;
-  cursor: pointer;
-  font-weight: 800;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
+  .btnGhost {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+    font-weight: 800;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
 
-.btnGhost:hover {
-  background: var(--surface-hover);
-}
+  .btnGhost:hover {
+    background: var(--surface-hover);
+  }
 
-.kindBadge {
-  font-size: 0.8rem;
-  font-weight: 900;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  white-space: nowrap;
-}
+  .kindBadge {
+    font-size: 0.8rem;
+    font-weight: 900;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
 
-.badgePrimarySoft {
-  background: var(--primary-soft);
-  border-color: var(--primary-soft-border);
-  color: var(--text);
-}
+  .badgePrimarySoft {
+    background: var(--primary-soft);
+    border-color: var(--primary-soft-border);
+    color: var(--text);
+  }
 
-.badgeWarning {
-  background: var(--warning-soft);
-  border-color: color-mix(in oklab, var(--warning) 35%, var(--border));
-  color: var(--text);
-}
+  .badgeWarning {
+    background: var(--warning-soft);
+    border-color: color-mix(in oklab, var(--warning) 35%, var(--border));
+    color: var(--text);
+  }
 
-.notice {
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--muted);
+  .notice {
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+  }
 }

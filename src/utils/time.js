@@ -16,7 +16,7 @@ export function sessionEndDateTime(e) {
   const [hh, mm] = end.split(":").map(Number);
 
   const [y, m, d] = e.date.split("-").map(Number);
-  return new Date(y, m - 1, d, hh, mm, 0, 0); // local time (Europe/Vienna on user's machine)
+  return new Date(y, m - 1, d, hh, mm, 0, 0); // local time 
 }
 
 export function isoToday() {

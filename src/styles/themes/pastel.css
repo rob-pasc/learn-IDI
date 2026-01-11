@@ -1,35 +1,31 @@
-/* src/styles/theme-pastel.css
-   Pastel (light) theme
-   Base tokens = HEX
-   Derived tokens = color-mix(in oklab, ...)
-*/
+@layer themes {
+  :root[data-theme="pastel"] {
+    /* -------- Base tokens (HEX) -------- */
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f2f6ff;     /* gentle tinted surface */
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #e2e8f0;
 
-:root[data-theme="pastel"] {
-  /* -------- Base tokens (HEX) -------- */
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --surface-2: #f2f6ff;     /* gentle tinted surface */
-  --text: #0f172a;
-  --muted: #475569;
-  --border: #e2e8f0;
+    --primary: #6366f1;       /* soft indigo */
+    --accent: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #0ea5e9;
 
-  --primary: #6366f1;       /* soft indigo */
-  --accent: #22c55e;
-  --danger: #ef4444;
-  --warning: #f59e0b;
-  --info: #0ea5e9;
+    --focus: #a5b4fc;
+    --shadow-color: #000000;
 
-  --focus: #a5b4fc;
-  --shadow-color: #000000;
+    --code-bg: #f5f7ff;
+    --code-border: #dbe4ff;
+    --code-text: #0f172a;
 
-  --code-bg: #f5f7ff;
-  --code-border: #dbe4ff;
-  --code-text: #0f172a;
-
-  /* Code “syntax-ish” accents */
-  --code-keyword: #7c3aed;
-  --code-string: #b45309;
-  --code-func: #2563eb;
-  --code-type: #0f766e;
-  --code-comment: #64748b;
+    /* Code “syntax-ish” accents */
+    --code-keyword: #7c3aed;
+    --code-string: #b45309;
+    --code-func: #2563eb;
+    --code-type: #0f766e;
+    --code-comment: #64748b;
+  }
 }

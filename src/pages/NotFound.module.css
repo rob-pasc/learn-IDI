@@ -1,144 +1,146 @@
-.wrap {
-  min-height: 70vh;
-  display: grid;
-  place-items: center;
-  gap: 14px;
-  padding: 32px 16px;
-  text-align: center;
-}
-
-.svg {
-  overflow: visible;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
-}
-
-/* --- SVG styling via global selectors inside module --- */
-.svg :global(.nf-halo circle) {
-  fill: rgba(255, 255, 255, 0.06);
-  stroke: rgba(255, 255, 255, 0.18);
-  stroke-width: 2;
-  animation: haloPulse 3.2s ease-in-out infinite;
-  transform-origin: 130px 105px;
-}
-
-.svg :global(.nf-float) {
-  animation: floaty 2.9s ease-in-out infinite;
-  transform-origin: 130px 105px;
-}
-
-.svg :global(.nf-body) {
-  fill: rgba(255, 255, 255, 0.92);
-  stroke: rgba(0, 0, 0, 0.08);
-  stroke-width: 2;
-}
-
-.svg :global(.nf-wave) {
-  stroke: rgba(0, 0, 0, 0.14);
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  animation: wave 1.8s ease-in-out infinite;
-  transform-origin: 130px 154px;
-}
-
-.svg :global(.nf-eye) {
-  fill: rgba(0, 0, 0, 0.65);
-  transform-origin: center;
-  animation: blink 4.6s infinite;
-}
-
-.svg :global(.nf-blush) {
-  fill: rgba(255, 120, 160, 0.35);
-}
-
-.svg :global(.nf-mouth) {
-  stroke: rgba(0, 0, 0, 0.35);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.svg :global(.nf-text text) {
-  font: 700 18px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  fill: rgba(255, 255, 255, 0.88);
-  letter-spacing: 0.2px;
-  paint-order: stroke;
-  stroke: rgba(0, 0, 0, 0.18);
-  stroke-width: 3px;
-}
-
-.msg h1 {
-  margin: 0;
-  font-size: 26px;
-  line-height: 1.15;
-}
-
-.msg p {
-  margin: 8px 0 0;
-  opacity: 0.85;
-}
-
-/* --- keyframes --- */
-@keyframes floaty {
-  0% {
-    transform: translateY(0);
+@layer components {
+  .wrap {
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+    gap: 14px;
+    padding: 32px 16px;
+    text-align: center;
   }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
-@keyframes wave {
-  0% {
-    stroke-dasharray: 10 10;
-    stroke-dashoffset: 0;
-    transform: translateY(0);
+  .svg {
+    overflow: visible;
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
   }
-  50% {
-    stroke-dasharray: 14 8;
-    stroke-dashoffset: 10;
-    transform: translateY(2px);
-  }
-  100% {
-    stroke-dasharray: 10 10;
-    stroke-dashoffset: 0;
-    transform: translateY(0);
-  }
-}
 
-/* blink by squashing vertically */
-@keyframes blink {
-  0%,
-  7%,
-  100% {
-    transform: scaleY(1);
+  /* --- SVG styling via global selectors inside module --- */
+  .svg :global(.nf-halo circle) {
+    fill: rgba(255, 255, 255, 0.06);
+    stroke: rgba(255, 255, 255, 0.18);
+    stroke-width: 2;
+    animation: haloPulse 3.2s ease-in-out infinite;
+    transform-origin: 130px 105px;
   }
-  3.5% {
-    transform: scaleY(0.12);
-  }
-}
 
-/* soft halo breathing */
-@keyframes haloPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.75;
+  .svg :global(.nf-float) {
+    animation: floaty 2.9s ease-in-out infinite;
+    transform-origin: 130px 105px;
   }
-  50% {
-    transform: scale(1.06);
-    opacity: 1;
-  }
-}
 
-/* If user prefers reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .svg :global(.nf-halo circle),
-  .svg :global(.nf-float),
-  .svg :global(.nf-wave),
+  .svg :global(.nf-body) {
+    fill: rgba(255, 255, 255, 0.92);
+    stroke: rgba(0, 0, 0, 0.08);
+    stroke-width: 2;
+  }
+
+  .svg :global(.nf-wave) {
+    stroke: rgba(0, 0, 0, 0.14);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: wave 1.8s ease-in-out infinite;
+    transform-origin: 130px 154px;
+  }
+
   .svg :global(.nf-eye) {
-    animation: none !important;
+    fill: rgba(0, 0, 0, 0.65);
+    transform-origin: center;
+    animation: blink 4.6s infinite;
+  }
+
+  .svg :global(.nf-blush) {
+    fill: rgba(255, 120, 160, 0.35);
+  }
+
+  .svg :global(.nf-mouth) {
+    stroke: rgba(0, 0, 0, 0.35);
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  .svg :global(.nf-text text) {
+    font: 700 18px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    fill: rgba(255, 255, 255, 0.88);
+    letter-spacing: 0.2px;
+    paint-order: stroke;
+    stroke: rgba(0, 0, 0, 0.18);
+    stroke-width: 3px;
+  }
+
+  .msg h1 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  .msg p {
+    margin: 8px 0 0;
+    opacity: 0.85;
+  }
+
+  /* --- keyframes --- */
+  @keyframes floaty {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      stroke-dasharray: 10 10;
+      stroke-dashoffset: 0;
+      transform: translateY(0);
+    }
+    50% {
+      stroke-dasharray: 14 8;
+      stroke-dashoffset: 10;
+      transform: translateY(2px);
+    }
+    100% {
+      stroke-dasharray: 10 10;
+      stroke-dashoffset: 0;
+      transform: translateY(0);
+    }
+  }
+
+  /* blink by squashing vertically */
+  @keyframes blink {
+    0%,
+    7%,
+    100% {
+      transform: scaleY(1);
+    }
+    3.5% {
+      transform: scaleY(0.12);
+    }
+  }
+
+  /* soft halo breathing */
+  @keyframes haloPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.75;
+    }
+    50% {
+      transform: scale(1.06);
+      opacity: 1;
+    }
+  }
+
+  /* If user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .svg :global(.nf-halo circle),
+    .svg :global(.nf-float),
+    .svg :global(.nf-wave),
+    .svg :global(.nf-eye) {
+      animation: none !important;
+    }
   }
 }

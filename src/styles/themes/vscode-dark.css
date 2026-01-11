@@ -1,36 +1,32 @@
-/* src/styles/theme-vscode-dark.css
-   VS Code-like (dark) theme
-   Base tokens = HEX
-   Derived tokens = color-mix(in oklab, ...)
-*/
+@layer themes {
+  :root[data-theme="vscode-dark"] {
+    /* -------- Base tokens (HEX) -------- */
+    --bg: #0b1020;           /* app background */
+    --surface: #111a33;      /* cards/panels */
+    --surface-2: #0f1730;    /* slightly flatter surface (optional base) */
+    --text: #e5e7eb;         /* main text */
+    --muted: #a1a7b3;        /* secondary text */
+    --border: #223055;       /* subtle borders/dividers */
 
-:root[data-theme="vscode-dark"] {
-  /* -------- Base tokens (HEX) -------- */
-  --bg: #0b1020;           /* app background */
-  --surface: #111a33;      /* cards/panels */
-  --surface-2: #0f1730;    /* slightly flatter surface (optional base) */
-  --text: #e5e7eb;         /* main text */
-  --muted: #a1a7b3;        /* secondary text */
-  --border: #223055;       /* subtle borders/dividers */
+    --primary: #7c3aed;      /* primary actions */
+    --accent: #22c55e;       /* success/highlights */
+    --danger: #ef4444;       /* destructive */
+    --warning: #f59e0b;      /* warnings */
+    --info: #38bdf8;         /* info */
 
-  --primary: #7c3aed;      /* primary actions */
-  --accent: #22c55e;       /* success/highlights */
-  --danger: #ef4444;       /* destructive */
-  --warning: #f59e0b;      /* warnings */
-  --info: #38bdf8;         /* info */
+    --focus: #a78bfa;        /* focus ring base */
+    --shadow-color: #000000; /* for mixing shadows */
 
-  --focus: #a78bfa;        /* focus ring base */
-  --shadow-color: #000000; /* for mixing shadows */
+    /* code block basics */
+    --code-bg: #0d1226;
+    --code-border: #223055;
+    --code-text: #e5e7eb;
 
-  /* code block basics */
-  --code-bg: #0d1226;
-  --code-border: #223055;
-  --code-text: #e5e7eb;
-
-  /* Code “syntax-ish” accents (lightweight, not full highlighting) */
-  --code-keyword: #c586c0;
-  --code-string: #ce9178;
-  --code-func: #dcdcaa;
-  --code-type: #4ec9b0;
-  --code-comment: #6a9955;
+    /* Code “syntax-ish” accents (lightweight, not full highlighting) */
+    --code-keyword: #c586c0;
+    --code-string: #ce9178;
+    --code-func: #dcdcaa;
+    --code-type: #4ec9b0;
+    --code-comment: #6a9955;
+  }
 }
