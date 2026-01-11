@@ -1,6 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import styles from "./NextSession.module.css";
-import { timeSlotForWeekday, sessionEndDateTime, isoToday, daysUntil, formatDate } from "../../../utils/time";
+import { 
+  timeSlotForWeekday, 
+  sessionEndDateTime, 
+  isoToday, 
+  // daysUntil, 
+  formatDate,
+  relativeUntilEvent
+} from "../../../utils/time";
 
 export default function NextSession() {
   const [sem1, setSem1] = useState(null);
@@ -31,26 +38,28 @@ export default function NextSession() {
     const now = new Date();
 
     for (const e of all) {
-      // Exams: treat as "whole day" (still show if date is today or later)
-      if (e.kind !== "session") {
-        if (e.date >= todayIso) return e;
+      // Sessions: compare against end time (skip if already over)
+      if (e.kind === "session") {
+        const end = sessionEndDateTime(e);
+
+        // fallback: date-only if we can't compute
+        if (!end) {
+          if (e.date > todayIso) return e;
+          if (e.date === todayIso) return e; // keep old behavior in fallback
+          continue;
+        }
+
+        if (end.getTime() > now.getTime()) return e;
         continue;
       }
 
-      // Sessions: use end-time to decide if it's still upcoming
-      const end = sessionEndDateTime(e);
-      if (!end) {
-        // fallback: if we can't compute time, keep old behavior
-        if (e.date >= todayIso) return e;
-        continue;
-      }
-
-      // If session hasn't ended yet, it's still the next one
-      if (end.getTime() > now.getTime()) return e;
+      // Exams: date-only (show if today or later)
+      if (e.date >= todayIso) return e;
     }
 
     return null;
   }, [sem1, sem2, todayIso]);
+
 
 
   if (error) {
@@ -110,22 +119,15 @@ export default function NextSession() {
                     {next.weekday ?? "—"}
                 </span>
 
-                {next.location ? (
-                    <span className={styles.metaPill}>
-                    {locationIcon(next.location)} {next.location}
-                    </span>
-                ) : (
-                    <span className={styles.metaPillMuted}>Ort: —</span>
-                )}
-                </div>
-
+                {renderLocationPills(next.location, styles)}
+              </div>
           </div>
 
           <div className={styles.rightCol}>
             <div className={styles.countdownLabel}>In</div>
-            <div className={styles.countdownValue}>
-              {isToday ? "0 Tagen (also heute)" : daysUntil(todayIso, next.date)}
-            </div>
+              <div className={styles.countdownValue}>
+                {relativeUntilEvent(next)}
+              </div>
           </div>
         </div>
 
@@ -179,16 +181,45 @@ function kindBadge(kind) {
   }
 }
 
-function locationIcon(loc) {
+{/* function locationIcon(loc) {
   const s = loc.toLowerCase();
   if (s.includes("hybrid")) return "🧩";
   if (s.includes("teams") || s.includes("online")) return "🌐";
   if (s.includes("fhv")) return "🏫";
   return "📍";
-}
+} */}
 
 function summaryLine(e) {
   const date = formatDate(e.date);
   const loc = e.location ? ` • ${e.location}` : "";
   return `${e.title} • ${date} (${e.weekday ?? "—"})${loc}`;
+}
+
+function renderLocationPills(location, styles) {
+  if (!location) return <span className={styles.metaPillMuted}>Ort: —</span>;
+
+  const s = location.toLowerCase();
+
+  // Hybrid -> two pills (as requested)
+  if (s.includes("hybrid")) {
+    return (
+      <>
+        <span className={styles.metaPill}>🌐 online – MS Teams</span>
+        <span className={styles.metaPill}>🏫 vor Ort – FHV</span>
+      </>
+    );
+  }
+
+  // Online
+  if (s.includes("teams") || s.includes("online")) {
+    return <span className={styles.metaPill}>🌐 online – MS Teams</span>;
+  }
+
+  // FHV / onsite
+  if (s.includes("fhv")) {
+    return <span className={styles.metaPill}>🏫 vor Ort – FHV</span>;
+  }
+
+  // fallback: show original text
+  return <span className={styles.metaPill}>📍 {location}</span>;
 }

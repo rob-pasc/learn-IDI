@@ -9,6 +9,7 @@ export default function Header({ theme, setTheme, themes }) {
         <nav style={{ display: "flex", gap: 12 }}>
           <NavLink to="/" end>Dashboard</NavLink>
           <NavLink to="/docs">Unterlagen</NavLink>
+          <NavLink to="/resources">Ressourcen</NavLink>
         </nav>
 
         <div>

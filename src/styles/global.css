@@ -1,4 +1,13 @@
-@layer reset, base-tokens, themes, derived-tokens, base, components, utilities, overrides;
+@layer 
+  reset, 
+  base-tokens, 
+  themes, 
+  derived-tokens, 
+  base, 
+  components, 
+  utilities, 
+  overrides
+;
 
 @layer reset {
   *,

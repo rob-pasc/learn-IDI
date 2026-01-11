@@ -1,0 +1,42 @@
+/* Tags = Farbe B (PRIMARY) */
+.chip {
+  border: 1px solid color-mix(in oklab, var(--primary) 28%, var(--border));
+  background: color-mix(in oklab, var(--primary-soft) 55%, var(--surface));
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.28rem 0.6rem;
+  font-weight: 900;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease,
+    transform 60ms ease;
+}
+
+.chip:hover {
+  background: color-mix(in oklab, var(--primary-soft) 75%, var(--surface));
+  border-color: color-mix(in oklab, var(--primary) 45%, var(--border));
+}
+
+.chip:active {
+  transform: translateY(1px);
+}
+
+/* Makes "selected tag" obvious */
+.active {
+  background: color-mix(in oklab, var(--primary-soft) 88%, var(--surface));
+  border-color: color-mix(in oklab, var(--primary) 65%, var(--border));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--primary) 45%, transparent),
+    0 0 0 3px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+.chip:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px color-mix(in oklab, var(--focus-ring) 45%, transparent),
+    var(--shadow-sm);
+}
+
+.displayOnly {
+  cursor: default;
+}

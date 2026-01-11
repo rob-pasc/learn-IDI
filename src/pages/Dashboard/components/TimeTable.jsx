@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./TimeTable.module.css";
-import { timeSlotForWeekday, formatDate, formatMonth } from "../../../utils/time";
+import { 
+  timeSlotForWeekday, 
+  formatDate, 
+  formatMonth,
+  isoToday
+} from "../../../utils/time";
 
 export default function TimeTable() {
   const [semester, setSemester] = useState("Sem1");
@@ -42,13 +47,7 @@ export default function TimeTable() {
     return Array.from(set).sort(); // YYYY-MM sorted
   }, [eventsSorted]);
 
-  const todayIso = useMemo(() => {        /*TODO: iso function aus time.js verwenden*/
-    const d = new Date();
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${y}-${m}-${day}`;
-  }, []);
+  const todayIso = useMemo(() => isoToday(), []);
 
   // Choose default month: current month if present, else first available.
   useEffect(() => {
@@ -339,13 +338,7 @@ function EventRow({ e, isToday = false }) {
         <div className={styles.metaLine}>
           {slot ? <span className={styles.metaPill}>⏰ {slot}</span> : null}
 
-          {e.location ? (
-            <span className={styles.metaPill}>
-              {locationIcon(e.location)} {e.location}
-            </span>
-          ) : (
-            <span className={`${styles.metaPill} ${styles.metaPillMuted}`}>—</span>
-          )}
+          {renderLocationPills(e.location, styles)}
 
           <span className={styles.tagsWrap}>
             {(e.tags ?? []).slice(0, 4).map((t) => (
@@ -373,10 +366,37 @@ function kindBadge(kind) {
   }
 }
 
-function locationIcon(loc) {
-  const s = loc.toLowerCase();
-  if (s.includes("hybrid")) return "🧩";
-  if (s.includes("teams") || s.includes("online")) return "🌐";
-  if (s.includes("fhv")) return "🏫";
-  return "📍";
+// function locationIcon(loc) {
+//   const s = loc.toLowerCase();
+//   if (s.includes("hybrid")) return "🧩";
+//   if (s.includes("teams") || s.includes("online")) return "🌐";
+//   if (s.includes("fhv")) return "🏫";
+//   return "📍";
+// }
+
+function renderLocationPills(location, styles) {
+  if (!location) {
+    return <span className={`${styles.metaPill} ${styles.metaPillMuted}`}>—</span>;
+  }
+
+  const s = location.toLowerCase();
+
+  if (s.includes("hybrid")) {
+    return (
+      <>
+        <span className={styles.metaPill}>🌐 online – MS Teams</span>
+        <span className={styles.metaPill}>🏫 vor Ort – FHV</span>
+      </>
+    );
+  }
+
+  if (s.includes("teams") || s.includes("online")) {
+    return <span className={styles.metaPill}>🌐 online – MS Teams</span>;
+  }
+
+  if (s.includes("fhv")) {
+    return <span className={styles.metaPill}>🏫 vor Ort – FHV</span>;
+  }
+
+  return <span className={styles.metaPill}>📍 {location}</span>;
 }

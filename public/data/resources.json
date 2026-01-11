@@ -1,0 +1,174 @@
+{
+  "resources": [
+    {
+      "id": "cs50-intro",
+      "title": "CS50's Introduction to Computer Science",
+      "icon": "/icons/cs50.svg",
+      "note": "Harvard's CS50 is a highly acclaimed free course offering a comprehensive introduction to computer science fundamentals.",
+      "url": "https://cs50.harvard.edu/x/2023/",
+      "category": "general",
+      "tags": ["course", "computer science", "programming", "theory"],
+      "pinned": true
+    },
+    {
+      "id": "freecodecamp",
+      "title": "freeCodeCamp Curriculum",
+      "icon": "/icons/freecodecamp.svg",
+      "note": "freeCodeCamp offers hands‑on tutorials and projects covering HTML, CSS, JavaScript, databases, and more.",
+      "url": "https://www.freecodecamp.org/learn/",
+      "category": "general",
+      "tags": ["tutorial", "web", "javascript", "projects"],
+      "pinned": true
+    },
+    {
+      "id": "cs50-youtube",
+      "title": "CS50 YouTube Channel",
+      "icon": "/icons/youtube.svg",
+      "note": "The official CS50 YouTube channel hosts lectures, shorts and Q&A sessions that thousands of learners follow.",
+      "url": "https://www.youtube.com/c/cs50",
+      "category": "general",
+      "tags": ["video", "computer science", "tutorial"],
+      "pinned": false
+    },
+    {
+      "id": "mdn-html",
+      "title": "MDN – HTML Guide",
+      "icon": "/icons/mdn.svg",
+      "note": "Mozilla's MDN provides authoritative HTML reference and guides for building semantic web pages.",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "category": "web",
+      "tags": ["docs", "reference", "html"],
+      "pinned": true
+    },
+    {
+      "id": "mdn-css",
+      "title": "MDN – CSS Guide",
+      "icon": "/icons/mdn.svg",
+      "note": "Comprehensive documentation on CSS layout, typography, animations and modern styling techniques.",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "category": "web",
+      "tags": ["docs", "reference", "css"],
+      "pinned": false
+    },
+    {
+      "id": "flexbox-guide",
+      "title": "A Complete Guide to Flexbox – CSS-Tricks",
+      "icon": "/icons/css-tricks.svg",
+      "note": "This widely referenced article explains Flexbox properties with clear diagrams and examples.",
+      "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+      "category": "web",
+      "tags": ["cheatsheet", "css", "layout"],
+      "pinned": false
+    },
+    {
+      "id": "postgres-docs",
+      "title": "PostgreSQL Documentation",
+      "icon": "/icons/postgresql.svg",
+      "note": "Official PostgreSQL documentation covering SQL syntax, data types and administration.",
+      "url": "https://www.postgresql.org/docs/",
+      "category": "sql",
+      "tags": ["docs", "database", "reference"],
+      "pinned": true
+    },
+    {
+      "id": "sqlbolt",
+      "title": "SQLBolt Interactive Lessons",
+      "icon": "/icons/sqlbolt.svg",
+      "note": "SQLBolt offers interactive lessons and exercises for beginners to learn SQL quickly.",
+      "url": "https://sqlbolt.com/",
+      "category": "sql",
+      "tags": ["tutorial", "interactive", "sql"],
+      "pinned": false
+    },
+    {
+      "id": "plantuml",
+      "title": "PlantUML Documentation",
+      "icon": "/icons/plantuml.svg",
+      "note": "PlantUML lets you create ER diagrams and UML models using simple text descriptions.",
+      "url": "https://plantuml.com/",
+      "category": "sql",
+      "tags": ["tool", "uml", "diagram"],
+      "pinned": false
+    },
+    {
+      "id": "dotnet-learn",
+      "title": "Microsoft Learn – .NET Tutorials",
+      "icon": "/icons/dotnet.svg",
+      "note": "Microsoft Learn provides guided modules and exercises for learning C# and .NET development.",
+      "url": "https://learn.microsoft.com/en-us/training/dotnet/",
+      "category": "csharp",
+      "tags": ["tutorial", "csharp", "dotnet"],
+      "pinned": true
+    },
+    {
+      "id": "csharp-reference",
+      "title": "C# Guide – Microsoft Documentation",
+      "icon": "/icons/csharp.svg",
+      "note": "Official C# language guide with syntax explanations, examples and best practices.",
+      "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+      "category": "csharp",
+      "tags": ["docs", "reference", "language"],
+      "pinned": false
+    },
+    {
+      "id": "csharp-youtube",
+      "title": "Brackeys – C# Basics YouTube Playlist",
+      "icon": "/icons/youtube.svg",
+      "note": "Brackeys' C# playlist introduces the basics of C# programming in short, easy-to-follow videos.",
+      "url": "https://www.youtube.com/playlist?list=PLPV2KyIb3jR4JsOygkHOd2h6SXzc2TRFu",
+      "category": "csharp",
+      "tags": ["video", "tutorial", "csharp"],
+      "pinned": false
+    },
+    {
+      "id": "mongodb-docs",
+      "title": "MongoDB Documentation",
+      "icon": "/icons/mongodb.svg",
+      "note": "Official documentation for MongoDB, covering CRUD operations, aggregation and performance.",
+      "url": "https://www.mongodb.com/docs/",
+      "category": "nosql",
+      "tags": ["docs", "nosql", "database"],
+      "pinned": true
+    },
+    {
+      "id": "redis-docs",
+      "title": "Redis Documentation",
+      "icon": "/icons/redis.svg",
+      "note": "Documentation for Redis – an in-memory key–value store supporting caching and data structures.",
+      "url": "https://redis.io/docs/",
+      "category": "nosql",
+      "tags": ["docs", "nosql", "database"],
+      "pinned": false
+    },
+    {
+      "id": "neo4j-docs",
+      "title": "Neo4j Documentation",
+      "icon": "/icons/neo4j.svg",
+      "note": "Neo4j docs teach graph database concepts and the Cypher query language for beginners.",
+      "url": "https://neo4j.com/docs/",
+      "category": "nosql",
+      "tags": ["docs", "graph", "database"],
+      "pinned": false
+    },
+    {
+      "id": "regex101",
+      "title": "regex101",
+      "icon": "/icons/regex101.svg",
+      "note": "regex101 lets you test, debug and visualize regular expressions with explanations.",
+      "url": "https://regex101.com/",
+      "category": "tools",
+      "tags": ["tool", "debugging", "regex"],
+      "pinned": false
+    },
+    {
+      "id": "codepen",
+      "title": "CodePen",
+      "icon": "/icons/codepen.svg",
+      "note": "CodePen is a playground for writing and sharing HTML, CSS and JavaScript demos.",
+      "url": "https://codepen.io/",
+      "category": "tools",
+      "tags": ["tool", "playground", "web"],
+      "pinned": false
+    }
+  ]
+}

@@ -10,8 +10,9 @@ import "./styles/themes/ocean.css";
 
 // import ColorCheck from "./components/debug/ColorCheck";
 import Layout from "./components/layout/Layout";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Docs from "./pages/Docs";
+import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 
 import { SunIcon, MoonStarsIcon, LeafIcon, CoffeeIcon, WaveIcon } from "./components/Icons";
@@ -54,6 +55,7 @@ export default function App() {
       <Route element={<Layout theme={theme} setTheme={setTheme} themes={THEMES} />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/docs" element={<Docs />} />
+        <Route path="/resources" element={<Resources />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
