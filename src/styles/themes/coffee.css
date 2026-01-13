@@ -17,6 +17,9 @@
     --focus: #f3c29a;        /* warm focus ring */
     --shadow-color: #000000;
 
+    --select-col: #c08457; 
+    --select-col-bg: #fde68a;  
+
     --code-bg: #120f0d;
     --code-border: #3a2f27;
     --code-text: #f3ede7;

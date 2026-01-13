@@ -1,3 +1,7 @@
 export default function Docs() {
-    return <h1>Unterlagen</h1>;
+  return (
+    <div className="u-container u-stack">
+        <h1>Unterlagen</h1>
+    </div>
+  )
 }

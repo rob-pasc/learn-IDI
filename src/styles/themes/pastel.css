@@ -17,6 +17,9 @@
     --focus: #a5b4fc;
     --shadow-color: #000000;
 
+    --select-col: #fff;
+    --select-col-bg: #c586c0;
+
     --code-bg: #f5f7ff;
     --code-border: #dbe4ff;
     --code-text: #0f172a;

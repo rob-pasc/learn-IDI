@@ -100,7 +100,8 @@
   }
 
   ::selection {
-    background-color: coral;
+    color: var(--select-col);
+    background-color: var(--select-col-bg);
   }
 }
 

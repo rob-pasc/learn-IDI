@@ -127,7 +127,7 @@ export default function ResourcesPage() {
           <div>
             <h1 className={styles.h1}>Ressourcen</h1>
             <p className={styles.subtle}>
-              Kuratierte Links, die beim Lernen wirklich helfen. Suche, filtere nach Kategorie oder Tags.
+              Praktische externe Ressourcen, die beim Lernen helfen. Suche, filtere nach Kategorie oder Tags.
             </p>
           </div>
         </header>

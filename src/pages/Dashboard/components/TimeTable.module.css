@@ -271,15 +271,13 @@
   .todayMarker {
     /* background: color-mix(in oklab, var(--surface-2) 75%, var(--info-soft)); */
     border-color: color-mix(in oklab, var(--info) 35%, var(--border));
-
-    background: rebeccapurple;            /*TODO*/
+    background: var(--primary);
   }
 
   .todayEvent {
     /* background: color-mix(in oklab, var(--surface-2) 75%, var(--primary-soft)); */
     border-color: var(--primary-soft-border);
-
-    background: rebeccapurple;            /*TODO glow effect?*/
+    background: var(--primary-soft);
   }
 
   .badgeToday {
@@ -357,7 +355,7 @@
     border-radius: 999px;
     border: 1px solid var(--border);
     /* background: var(--surface-2); */
-    background: rebeccapurple;            /*TODO*/
+    background: var(--primary);
     color: var(--text);
     cursor: pointer;
     font-weight: 800;

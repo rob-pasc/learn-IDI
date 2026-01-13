@@ -18,6 +18,8 @@
     --shadow-color: #000000; /* for mixing shadows */
 
     /* --icon-color: #fff;  */
+    --select-col: #fff;
+    --select-col-bg: #c586c0;
 
     /* code block basics */
     --code-bg: #0d1226;
