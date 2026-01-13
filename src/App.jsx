@@ -9,7 +9,7 @@ import "./styles/themes/coffee.css";
 import "./styles/themes/ocean.css";
 
 // import ColorCheck from "./components/debug/ColorCheck";
-import Layout from "./components/layout/Layout";
+import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import Docs from "./pages/Docs";
 import Resources from "./pages/Resources";

@@ -17,6 +17,8 @@
     --focus: #a78bfa;        /* focus ring base */
     --shadow-color: #000000; /* for mixing shadows */
 
+    /* --icon-color: #fff;  */
+
     /* code block basics */
     --code-bg: #0d1226;
     --code-border: #223055;

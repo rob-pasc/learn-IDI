@@ -113,13 +113,28 @@
     padding: 2rem 1.25rem;
   }
 
-  .u-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .u-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;}
   .u-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .u-inline { display: inline; }
 
   .u-mb-3 { margin-bottom: var(--space-3); }
 }
 
 /* overrides layer used in the css modules for specific overrides */
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: delete */
 
 .card {
   background: var(--surface);
@@ -128,8 +143,6 @@
   box-shadow: var(--shadow-sm);
   padding: var(--space-4);
 }
-
-
 
 .badge {
   display: inline-flex;

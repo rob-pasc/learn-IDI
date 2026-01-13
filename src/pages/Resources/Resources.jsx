@@ -148,7 +148,7 @@ export default function ResourcesPage() {
 
         {pinned.length > 0 && (
           <section className={styles.section}>
-            <div className={styles.sectionTitle}>Start hier</div>
+            <div className={styles.sectionTitle}>Besonders nützlich</div>
             <ResourceGrid
               resources={pinned}
               categoryLabelsDE={CATEGORY_LABELS_DE}
