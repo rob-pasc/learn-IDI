@@ -1,6 +1,8 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer style={{ padding: 20, borderTop: "1px solid #ddd" }}>
+    <footer className={styles.footer}>
       <small>© {new Date().getFullYear()}</small>
     </footer>
   );

@@ -1,0 +1,6 @@
+@layer components {
+  .footer {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+}

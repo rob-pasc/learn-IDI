@@ -1,0 +1,12 @@
+@layer components {
+  .header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

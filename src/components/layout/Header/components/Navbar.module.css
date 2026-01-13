@@ -1,0 +1,6 @@
+@layer components {
+  .navbar {
+    display: flex;
+    gap: 12px;
+  }
+}

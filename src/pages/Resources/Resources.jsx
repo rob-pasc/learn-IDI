@@ -114,7 +114,10 @@ export default function ResourcesPage() {
   }
 
   if (!data) {
-    return <div className={styles.notice}>Lade Ressourcen…</div>;
+    // vernachlässigbar - störender Flash, weil es nur so kurz dauert, deswegen auskommentiert
+    // return <div className={styles.notice}>Lade Ressourcen…</div>;
+
+    return null;
   }
 
   return (
