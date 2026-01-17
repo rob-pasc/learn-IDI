@@ -1,0 +1,108 @@
+@layer components {
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    border: none;
+    background: color-mix(in oklab, var(--bg) 65%, transparent);
+    backdrop-filter: blur(6px);
+    z-index: 50;
+  }
+
+  .modal {
+    position: fixed;
+    inset: 6vh 6vw;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    z-index: 60;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+    background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .headLeft {
+    min-width: 0;
+  }
+
+  .kicker {
+    color: var(--muted);
+    font-weight: 900;
+    font-size: 0.82rem;
+    letter-spacing: 0.2px;
+  }
+
+  .title {
+    color: var(--text-strong);
+    font-weight: 950;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 72ch;
+  }
+
+  .headRight {
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btnGhost {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-weight: 900;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnGhost:hover {
+    background: var(--surface-hover);
+  }
+
+  .btnClose {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 900;
+  }
+
+  .btnClose:hover {
+    background: var(--surface-hover);
+  }
+
+  .body {
+    padding: var(--space-4);
+    overflow: auto;
+    flex: 1;
+  }
+
+  .notice {
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px dashed var(--border);
+    background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+    color: var(--muted);
+  }
+}

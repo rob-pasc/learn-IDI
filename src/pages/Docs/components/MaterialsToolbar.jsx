@@ -1,0 +1,106 @@
+import styles from "./MaterialsToolbar.module.css";
+
+export default function MaterialsToolbar({
+  course,
+  query,
+  setQuery,
+  typeFilters,
+  toggleType,
+  countsByType,
+  sortBy,
+  setSortBy,
+  clearFilters,
+  resultsCount,
+}) {
+  const hasFilters =
+    query.trim() || typeFilters.size > 0 || sortBy !== "newest";
+
+  return (
+    <section className={styles.card}>
+      <div className={styles.topRow}>
+        <div>
+          <div className={styles.titleLine}>
+            <span className={styles.title}>{course?.labelDE ?? "—"}</span>
+            <span className={styles.miniBadge}>{resultsCount} Treffer</span>
+          </div>
+          <div className={styles.subtle}>
+            Suche & filtere nach Dateityp.
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className={styles.clearBtn}
+          onClick={clearFilters}
+          disabled={!hasFilters}
+        >
+          Zurücksetzen
+        </button>
+      </div>
+
+      <div className={styles.controls}>
+        <div className={styles.searchWrap}>
+          <input
+            className={styles.search}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Suchen (Dateiname)…"
+            aria-label="Unterlagen suchen"
+          />
+        </div>
+
+        <div className={styles.typeRow} aria-label="Dateityp Filter">
+          <TypeChip
+            label={`MD (${countsByType.md ?? 0})`}
+            active={typeFilters.has("md")}
+            onClick={() => toggleType("md")}
+          />
+          <TypeChip
+            label={`SQL (${countsByType.sql ?? 0})`}
+            active={typeFilters.has("sql")}
+            onClick={() => toggleType("sql")}
+          />
+          <TypeChip
+            label={`ZIP (${countsByType.zip ?? 0})`}
+            active={typeFilters.has("zip")}
+            onClick={() => toggleType("zip")}
+          />
+          <TypeChip
+            label={`PDF (${countsByType.pdf ?? 0})`}
+            active={typeFilters.has("pdf")}
+            onClick={() => toggleType("pdf")}
+          />
+        </div>
+
+        <div className={styles.sortWrap}>
+          <label className={styles.sortLabel} htmlFor="sort">
+            Sortierung
+          </label>
+          <select
+            id="sort"
+            className={styles.select}
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="newest">Neueste zuerst</option>
+            <option value="oldest">Älteste zuerst</option>
+            <option value="az">A–Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TypeChip({ label, active, onClick }) {
+  return (
+    <button
+      type="button"
+      className={`${styles.typeChip} ${active ? styles.typeChipActive : ""}`}
+      onClick={onClick}
+      aria-pressed={active}
+    >
+      {label}
+    </button>
+  );
+}

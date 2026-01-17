@@ -4,16 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "gen:materials": "node scripts/generate-materials-index.mjs",
+    "dev": "npm run gen:materials && vite",
+    "build": "npm run gen:materials && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "express": "^5.2.1",
+    "prismjs": "^1.30.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.11.0"
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.11.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

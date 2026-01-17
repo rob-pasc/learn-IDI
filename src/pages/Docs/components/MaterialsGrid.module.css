@@ -1,0 +1,15 @@
+@layer components {
+  .grid {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .empty {
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px dashed var(--border);
+    background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+    color: var(--muted);
+  }
+}

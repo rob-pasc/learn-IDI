@@ -7,6 +7,7 @@ import "./styles/themes/pastel.css";
 import "./styles/themes/forest.css";
 import "./styles/themes/coffee.css";
 import "./styles/themes/ocean.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 // import ColorCheck from "./components/debug/ColorCheck";
 import Layout from "./components/Layout";
