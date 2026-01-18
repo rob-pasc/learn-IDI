@@ -157,3 +157,46 @@ export function PaletteIcon() {
     </svg>
   );
 }
+
+export function LearnIdiIcon() {
+  return (
+    <svg height="56px" width="56px" class="learn-idi-icon" transform="translate(0, 3)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="learn-idi favicon">
+      {/* <!-- Text labels --> */}
+      <text
+        x="0"
+        y="18"
+        font-size="10"
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        fill="currentColor"
+        font-weight="600"
+      >Learn</text>
+
+      <text
+        x="50"
+        y="49"
+        font-size="10"
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        fill="currentColor"
+        font-weight="600"
+      >IDI</text>
+
+      <g transform="translate(4, 0)">
+        <g
+          fill="none"
+          stroke="#fff"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          {/* <!-- Left angle bracket --> */}
+          <path d="M26 18 L14 32 L26 46" />
+          {/* <!-- Right angle bracket --> */}
+          <path d="M38 18 L50 32 L38 46" />
+        </g>
+
+        {/* <!-- Center dot --> */}
+        <circle cx="32" cy="32" r="5.2" fill="currentColor" />
+      </g>
+    </svg>
+  );
+}

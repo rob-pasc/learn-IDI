@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T17:10:40.738Z",
+  "generatedAt": "2026-01-18T10:45:23.925Z",
   "courses": [
     {
       "id": "web",
@@ -31,6 +31,22 @@
     }
   ],
   "items": [
+    {
+      "id": "prog-introductiontoprogramming-zip",
+      "courseId": "prog",
+      "semester": 2,
+      "type": "zip",
+      "title": "IntroductionToProgramming.zip",
+      "paths": {
+        "main": "/downloads/prog/IntroductionToProgramming.zip"
+      },
+      "tags": [
+        "prog",
+        "sem2",
+        "zip"
+      ],
+      "mtimeMs": 1768670979375.308
+    },
     {
       "id": "web-einheit-10-09-12-2025-zip",
       "courseId": "web",
@@ -190,6 +206,22 @@
         "zip"
       ],
       "mtimeMs": 1768662166959.041
+    },
+    {
+      "id": "prog-prep",
+      "courseId": "prog",
+      "semester": 2,
+      "type": "md",
+      "title": "Prep.md",
+      "paths": {
+        "main": "/downloads/prog/Prep.md"
+      },
+      "tags": [
+        "prog",
+        "sem2",
+        "md"
+      ],
+      "mtimeMs": 1768646836185.746
     },
     {
       "id": "rdb-konzeptionell-logisch",
