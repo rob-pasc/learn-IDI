@@ -42,6 +42,10 @@
     flex: 0 0 auto;
   }
 
+  :root[data-theme="pastel"] .iconWrap {
+    background: var(--primary-soft);
+  }
+
   .icon {
     width: 26px;
     height: 26px;

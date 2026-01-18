@@ -1,0 +1,7 @@
+- [ ] corner-shapes anpassen
+- [ ] in `docs` die Bubbles anpassen (Semester und Buttons in RDB)
+- [ ] Button Component extrahieren
+- [ ] alle Seiten & Themes durchgehen
+- [ ] Code durchgehen (Kommentare!)
+- [ ] documentation durchgehen
+- [ ] alles zippen & abgeben

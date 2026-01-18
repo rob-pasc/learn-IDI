@@ -94,7 +94,7 @@ export default function NextSession() {
         <div>
           <h2 className={styles.h2}>Nächste Einheit</h2>
           <p className={styles.subtle}>
-            Schnelle Übersicht • basiert auf deinem Timetable
+            Schnellübersicht
           </p>
         </div>
 
@@ -124,10 +124,9 @@ export default function NextSession() {
           </div>
 
           <div className={styles.rightCol}>
-            <div className={styles.countdownLabel}>In</div>
-              <div className={styles.countdownValue}>
-                {relativeUntilEvent(next)}
-              </div>
+            <div className={styles.countdownValue}>
+              {relativeUntilEvent(next)}
+            </div>
           </div>
         </div>
 
@@ -180,14 +179,6 @@ function kindBadge(kind) {
       return { label: "Einheit", className: styles.badgePrimarySoft };
   }
 }
-
-{/* function locationIcon(loc) {
-  const s = loc.toLowerCase();
-  if (s.includes("hybrid")) return "🧩";
-  if (s.includes("teams") || s.includes("online")) return "🌐";
-  if (s.includes("fhv")) return "🏫";
-  return "📍";
-} */}
 
 function summaryLine(e) {
   const date = formatDate(e.date);

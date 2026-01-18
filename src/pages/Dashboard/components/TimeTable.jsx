@@ -187,7 +187,7 @@ export default function TimeTable() {
           <div className={styles.empty}>
             <div className={styles.emptyTitle}>Noch keine Einträge</div>
             <div className={styles.emptyText}>
-              Füge Termine in <code>public/data/timetable_sem2.json</code> hinzu.
+              Für dieses Semester sind noch keine Termine im Timetable erfasst.
             </div>
           </div>
         ) : (

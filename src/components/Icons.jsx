@@ -169,7 +169,7 @@ export function LearnIdiIcon() {
         font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         fill="currentColor"
         font-weight="600"
-      >Learn</text>
+      >learn</text>
 
       <text
         x="50"
@@ -183,7 +183,7 @@ export function LearnIdiIcon() {
       <g transform="translate(4, 0)">
         <g
           fill="none"
-          stroke="#fff"
+          stroke="currentColor"
           stroke-width="5"
           stroke-linecap="round"
           stroke-linejoin="round"

@@ -11,7 +11,6 @@ export default function Header({ theme, setTheme, themes }) {
       <div className={styles.headerContent}>
         <div className="u-row">
           <NavLink to="/" end>
-            {/* <img src="/learn-idi.svg" alt="learn-IDI icon" height="56px" width="56px" /> */}
             <LearnIdiIcon />
           </NavLink>
           <Navbar />

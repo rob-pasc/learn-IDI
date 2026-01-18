@@ -1,15 +1,14 @@
 @layer themes {
   :root[data-theme="forest"] {
-    /* -------- Base tokens (HEX) -------- */
-    --bg: #0f1a14;           /* deep forest background */
-    --surface: #15241c;      /* cards / panels */
+    --bg: #0f1a14;           
+    --surface: #15241c;    
     --surface-2: #132019;
-    --text: #e6efe9;         /* soft light text */
-    --muted: #9fb5a7;        /* muted sage */
-    --border: #274035;       /* mossy border */
+    --text: #e6efe9;         
+    --muted: #9fb5a7;       
+    --border: #274035;       
 
-    --primary: #3fa46a;      /* fresh leaf green */
-    --accent: #84cc16;       /* moss / lime accent */
+    --primary: #3fa46a;     
+    --accent: #84cc16;     
     --danger: #ef4444;
     --warning: #eab308;
     --info: #38bdf8;
@@ -19,16 +18,5 @@
 
     --select-col: #3fa46a;  
     --select-col-bg: #6ee7b7;
-
-    --code-bg: #0e1813;
-    --code-border: #274035;
-    --code-text: #e6efe9;
-
-    /* Code accents (forest-y, readable) */
-    --code-keyword: #6ee7b7; /* mint */
-    --code-string: #fde68a;  /* warm yellow */
-    --code-func: #a7f3d0;    /* pale green */
-    --code-type: #7dd3fc;    /* cool blue */
-    --code-comment: #6b8f7a; /* moss muted */
   }
 }

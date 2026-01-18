@@ -98,12 +98,6 @@
     align-items: flex-end;
   }
 
-  .countdownLabel {
-    color: var(--muted);
-    font-weight: 800;
-    font-size: 0.85rem;
-  }
-
   .countdownValue {
     color: var(--text-strong);
     font-weight: 900;

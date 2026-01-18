@@ -4,7 +4,7 @@
 
   header: [
     #align(right)[
-      *Learn-IDI Docs*
+      *learn-IDI Docs*
     ]
     #v(1em)
   ],
@@ -35,7 +35,7 @@
 
 #align(center)[
   = Dokumentation React-Projekt
-  = Learn-IDI Hub
+  = learn-IDI Hub
   #v(1em)
 
   #grid(
@@ -105,7 +105,7 @@ Dieser Ansatz ist bewusst gewählt, da er für ein statisch gehostetes Projekt s
 == 2.3 Nutzung von KI
 Künstliche Intelligenz wurde in diesem Projekt gezielt als unterstützendes Werkzeug eingesetzt. Insbesondere das Styling der einzelnen Komponenten wurde mithilfe von ChatGPT entworfen und anschließend von mir leicht angepasst. Dadurch konnte ich mich stärker auf Struktur, User Experience und Konsistenz konzentrieren, ohne jedes UI-Detail manuell von Grund auf entwerfen zu müssen.
 
-Darüber hinaus habe ich ChatGPT zur Entwicklung der Logik rund um zeitbezogene Funktionalitäten genutzt, vor allem bei den Hilfsfunktionen in `/utils/time.js` zur Berechnung von Zeitfenstern, relativen Zeitangaben und Datumsvergleichen.  
+Darüber hinaus habe ich ChatGPT zur Entwicklung der Logik in JavaScript genutzt, vor allem bei den Hilfsfunktionen in `/utils/time.js` zur Berechnung von Zeitfenstern, relativen Zeitangaben und Datumsvergleichen.  
 
 Ein weiterer wichtiger Einsatzbereich war die konzeptionelle Phase des Projekts: Ideen, Layouts und Seitenstrukturen wurden gemeinsam diskutiert, Vor- und Nachteile abgewogen und anschließend in eine konkrete Implementierung überführt. Zusätzlich diente KI als Nachschlage- und Lernhilfe für die verwendeten Technologien, etwa bei Best Practices, Architekturentscheidungen und beim Debugging.
 
