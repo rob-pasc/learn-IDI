@@ -59,6 +59,7 @@
 ]
 
 = 1. Die Vision
+#v(0.5em)
 Das Projekt *learn-IDI* ist eine Web-Applikation, die als zentraler Hub für mein Tutorium im Studiengang *Informatik: Digital Innovation (IDI)* dient. Zielgruppe sind die Erst- und Zweitsemestrigen, die im Rahmen des Tutoriums regelmäßig Unterlagen, Aufgaben, Code-Beispiele und organisatorische Infos benötigen. Die Anwendung bündelt dafür mehrere Funktionen: einen übersichtlichen Timetable mit schneller „Nächste Einheit“-Übersicht, eine Unterlagen-Seite, auf der Dateien je Lehrveranstaltung strukturiert zum Ansehen und Download verfügbar sind, und eine Page für externe hilfreiche Ressourcen mitsamt Filter-Möglichkeiten. Damit entsteht eine Plattform, die sowohl organisatorische als auch inhaltliche Unterstützung vereint.
 
 Das Projekt löst das Problem, dass das Tutorium bisher über mehrere Kanäle verteilt ist: Kommunikation läuft hauptsächlich über MS Teams und gelegentlich E-Mail, während Dokumente (zB. Timetable, Aufgaben, Beispiele) auf OneDrive liegen und als Ordnerstruktur geteilt werden. Diese Trennung macht es für die Studierende oft mühsam, schnell das Richtige zu finden. Und für mich bedeutet sie laufenden Pflegeaufwand und potenziell Verwirrung durch verschiedene Linkstände oder Versionen. *learn-IDI* schafft hier Abhilfe, indem es die wichtigsten Tutoriums-Inhalte an einem Ort zusammenführt, klar strukturiert präsentiert und den Zugriff vereinheitlicht.
