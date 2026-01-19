@@ -10,6 +10,8 @@ export default function MaterialsPage() {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
 
+  const [showLoading, setShowLoading] = useState(false);
+
   const [activeCourseId, setActiveCourseId] = useState(null);
 
   const [query, setQuery] = useState("");
@@ -27,6 +29,15 @@ export default function MaterialsPage() {
       .then((json) => setData(json))
       .catch(() => setError("Unterlagen konnten nicht geladen werden."));
   }, []);
+
+  useEffect(() => {
+    // wait 200ms before showing loading text
+    let timer;
+    if (!data) {
+      timer = setTimeout(() => setShowLoading(true), 200);
+    }
+    return () => clearTimeout(timer);
+  }, [data]);
 
   const courses = useMemo(() => {
     const list = Array.isArray(data?.courses) ? data.courses : [];
@@ -137,7 +148,10 @@ export default function MaterialsPage() {
   }
 
   if (error) return <div className={styles.notice}>{error}</div>;
-  if (!data) return <div className={styles.notice}>Lade Unterlagen…</div>;
+  
+  if (!data) {
+    return showLoading ? <div className={styles.notice}>Lade Dokumente...</div> : null;
+  }
 
   return (
     <div className="u-container u-stack">

@@ -28,10 +28,14 @@
 //   );
 // }
 
-import Button from "../../../ui/Button"; // Adjust import path based on folder structure
-import styles from "./ThemeToggle.module.css"; // You might still need container styles
+import { useContext } from "react";
+import Button from "../../../ui/Button";
+import { ThemeContext } from "../../../../App";
+import styles from "./ThemeToggle.module.css"; 
 
-export default function ThemeToggle({ theme, setTheme, themes }) {
+export default function ThemeToggle() {
+  const { theme, setTheme, themes } = useContext(ThemeContext);
+
   return (
     <div className={styles.container} role="group" aria-label="Theme selector">
       {themes.map((t) => (

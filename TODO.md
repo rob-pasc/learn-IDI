@@ -1,7 +1,7 @@
 - [x] corner-shapes anpassen
 - [x] in `docs` die Bubbles anpassen (Semester und Buttons in RDB)
 - [x] Button Component extrahieren
-- [ ] Farben der Header Links
+- [x] Farben der Header Links
 - [ ] alle Seiten & Themes durchgehen
 - [ ] Code durchgehen (Kommentare!)
 - [ ] documentation durchgehen

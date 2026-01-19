@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./styles/global.css";
@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 
 import { SunIcon, MoonStarsIcon, LeafIcon, CoffeeIcon, WaveIcon } from "./components/Icons";
 
+export const ThemeContext = createContext(null);
 
 const THEMES = [
   { id: "pastel", label: "Pastel (Light)", Icon: SunIcon },
@@ -52,14 +53,16 @@ export default function App() {
   // );
 
   return (
-    <Routes>
-      <Route element={<Layout theme={theme} setTheme={setTheme} themes={THEMES} />}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/docs" element={<Docs />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <ThemeContext.Provider value={{ theme, setTheme, themes: THEMES }}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/docs" element={<Docs />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </ThemeContext.Provider>
   );
 }
 

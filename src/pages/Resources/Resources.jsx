@@ -17,6 +17,8 @@ export default function ResourcesPage() {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
 
+  const [showLoading, setShowLoading] = useState(false);
+
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeTags, setActiveTags] = useState(new Set());
@@ -30,6 +32,15 @@ export default function ResourcesPage() {
       .then((json) => setData(json))
       .catch(() => setError("Ressourcen konnten nicht geladen werden."));
   }, []);
+
+  useEffect(() => {
+    // wait 200ms before showing loading text
+    let timer;
+    if (!data) {
+      timer = setTimeout(() => setShowLoading(true), 200);
+    }
+    return () => clearTimeout(timer);
+  }, [data]);
 
   const resources = useMemo(() => {
     const list = Array.isArray(data?.resources) ? data.resources : Array.isArray(data) ? data : [];
@@ -114,10 +125,7 @@ export default function ResourcesPage() {
   }
 
   if (!data) {
-    // vernachlässigbar - störender Flash, weil es nur so kurz dauert, deswegen auskommentiert
-    // return <div className={styles.notice}>Lade Ressourcen…</div>;
-
-    return null;
+    return showLoading ? <div className={styles.notice}>Lade Ressourcen…</div> : null;
   }
 
   return (

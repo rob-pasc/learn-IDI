@@ -66,7 +66,7 @@
     --input-border: color-mix(in oklab, var(--border) 85%, var(--bg));
     --input-border-focus: color-mix(in oklab, var(--primary) 55%, var(--border));
 
-    --link: color-mix(in oklab, var(--info) 80%, white);
+    --link: color-mix(in oklab, var(--info) 60%, white);
     --link-hover: color-mix(in oklab, var(--link) 85%, white);
   }
 }

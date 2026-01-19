@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 
 import { LearnIdiIcon } from "../../Icons.jsx";
 
-export default function Header({ theme, setTheme, themes }) {
+export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
@@ -16,7 +16,7 @@ export default function Header({ theme, setTheme, themes }) {
           <Navbar />
         </div>
       
-        <ThemeToggle theme={theme} setTheme={setTheme} themes={themes} />
+        <ThemeToggle />
       </div>
     </header> 
   );

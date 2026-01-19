@@ -3,10 +3,10 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
 
-export default function Layout({ theme, setTheme, themes }) {
+export default function Layout() {
   return (
     <div className={styles.layout}>
-      <Header theme={theme} setTheme={setTheme} themes={themes} />
+      <Header />
       <main className={styles.main}>
         <Outlet />
       </main>
