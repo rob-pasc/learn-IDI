@@ -29,14 +29,6 @@ export default function MaterialsToolbar({
           </div>
         </div>
 
-        {/* <button
-          type="button"
-          className={styles.clearBtn}
-          onClick={clearFilters}
-          disabled={!hasFilters}
-        >
-          Zurücksetzen
-        </button> */}
         <Button
           variant="ghost"
           onClick={clearFilters}
@@ -65,11 +57,7 @@ export default function MaterialsToolbar({
           >
             MD ({countsByType.md ?? 0})
           </Button>
-          {/* <TypeChip
-            label={`MD (${countsByType.md ?? 0})`}
-            active={typeFilters.has("md")}
-            onClick={() => toggleType("md")}
-          /> */}
+
           <Button 
             variant="chip" 
             active={typeFilters.has("sql")} 
@@ -77,11 +65,7 @@ export default function MaterialsToolbar({
           >
             SQL ({countsByType.sql ?? 0})
           </Button>
-          {/* <TypeChip
-            label={`SQL (${countsByType.sql ?? 0})`}
-            active={typeFilters.has("sql")}
-            onClick={() => toggleType("sql")}
-          /> */}
+
           <Button 
             variant="chip" 
             active={typeFilters.has("zip")} 
@@ -89,11 +73,7 @@ export default function MaterialsToolbar({
           >
             ZIP ({countsByType.zip ?? 0})
           </Button>
-          {/* <TypeChip
-            label={`ZIP (${countsByType.zip ?? 0})`}
-            active={typeFilters.has("zip")}
-            onClick={() => toggleType("zip")}
-          /> */}
+
           <Button 
             variant="chip" 
             active={typeFilters.has("pdf")} 
@@ -101,11 +81,7 @@ export default function MaterialsToolbar({
           >
             PDF ({countsByType.pdf ?? 0})
           </Button>
-          {/* <TypeChip
-            label={`PDF (${countsByType.pdf ?? 0})`}
-            active={typeFilters.has("pdf")}
-            onClick={() => toggleType("pdf")}
-          /> */}
+
         </div>
 
         <div className={styles.sortWrap}>
@@ -127,16 +103,3 @@ export default function MaterialsToolbar({
     </section>
   );
 }
-
-// function TypeChip({ label, active, onClick }) {
-//   return (
-//     <button
-//       type="button"
-//       className={`${styles.typeChip} ${active ? styles.typeChipActive : ""}`}
-//       onClick={onClick}
-//       aria-pressed={active}
-//     >
-//       {label}
-//     </button>
-//   );
-// }

@@ -5,7 +5,6 @@ import {
   timeSlotForWeekday, 
   sessionEndDateTime, 
   isoToday, 
-  // daysUntil, 
   formatDate,
   relativeUntilEvent
 } from "../../../utils/time";
@@ -14,9 +13,10 @@ export default function NextSession() {
   const [sem1, setSem1] = useState(null);
   const [sem2, setSem2] = useState(null);
   const [error, setError] = useState("");
-
   const [showToast, setShowToast] = useState(false);
-  // 2. Auto-hide toast after 2 seconds
+
+
+  // auto-hide toast after 2 seconds
   useEffect(() => {
     if (showToast) {
       const timer = setTimeout(() => setShowToast(false), 2000);
@@ -35,6 +35,7 @@ export default function NextSession() {
       })
       .catch(() => setError("Nächste Einheit konnte nicht geladen werden."));
   }, []);
+
 
   const todayIso = useMemo(() => isoToday(), []);
 
@@ -70,6 +71,7 @@ export default function NextSession() {
     return null;
   }, [sem1, sem2, todayIso]);
 
+
   if (error) {
     return <div className={styles.notice}>{error}</div>;
   }
@@ -91,10 +93,12 @@ export default function NextSession() {
     );
   }
 
+
   const badge = kindBadge(next.kind);
   const when = formatDate(next.date);
   const isToday = next.date === todayIso;
   const slot = next.kind === "session" ? timeSlotForWeekday(next.weekday) : null;
+
 
   return (
     <section className={styles.card}>
@@ -147,16 +151,6 @@ export default function NextSession() {
         </div>
 
         <div className={styles.actions}>
-          {/* <button
-            type="button"
-            className={styles.btnPrimary}
-            onClick={() => {
-              const el = document.getElementById("timetable");
-              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-            }}
-          >
-            Zum Timetable ↓
-          </button> */}
           <Button
             variant="primary"
             onClick={() => {
@@ -167,16 +161,6 @@ export default function NextSession() {
             Zum Timetable ↓
           </Button>
 
-          {/* <button
-            type="button"
-            className={styles.btnGhost}
-            onClick={() => {
-              navigator.clipboard?.writeText(summaryLine(next));
-            }}
-            title="Zusammenfassung kopieren"
-          >
-            Copy Summary
-          </button> */}
           <Button
             variant="ghost"
             onClick={() => {
@@ -199,6 +183,7 @@ export default function NextSession() {
     </section>
   );
 }
+
 
 function isRelevantEvent(e) {
   // show sessions + exams; hide holidays/breaks in "next session"

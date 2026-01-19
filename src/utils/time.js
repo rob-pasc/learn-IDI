@@ -7,7 +7,7 @@ export function timeSlotForWeekday(weekday) {
   if (w.includes("dienstag")) return "10:15–12:30";
   if (w.includes("samstag")) return "10:00–11:30";
 
-  return null; // z.B. Montag Prüfung -> keine Standardzeit
+  return null; 
 }
 
 export function sessionEndDateTime(e) {
@@ -128,7 +128,6 @@ export function relativeUntilEvent(e, now = new Date()) {
     return `in ${days} Tagen`;
   }
 
-  // Everything else: date-only phrasing
   if (e?.date === todayIso) return "Heute";
   return relativeByDateOnly(e.date, now);
 }

@@ -14,12 +14,12 @@
     padding: 0.5rem 1rem;
     background: transparent;
     color: var(--text);
-    text-decoration: none; /* For when rendered as <a> */
+    text-decoration: none; 
   }
 
   /* --- Variants --- */
 
-  /* Primary (New: matches NextSession/TimeTable primary buttons) */
+  /* Primary (matches NextSession/TimeTable primary buttons) */
   .primary {
     border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--border));
     background: var(--primary);
@@ -35,7 +35,7 @@
     background: var(--primary-pressed);
   }
 
-  /* Subtle (New: transparent background, no border, for options/toggles) */
+  /* Subtle (for options/toggles) */
   .subtle {
     border-color: transparent;
     background: transparent;
@@ -74,7 +74,7 @@
     padding: 0.5rem;
     aspect-ratio: 1/1;
     color: var(--text-subtle);
-    border-radius: 50%; /* Optional: round icon buttons */
+    border-radius: 50%; 
 
     &.active {
       color: var(--primary);
@@ -84,20 +84,6 @@
     background-color: var(--surface-hover);
     color: var(--text);
   }
-
-  /* Filter Chip (used for TypeChip) */
-  /* .chip {
-    border-color: var(--border);
-    background-color: var(--surface);
-    color: var(--text-subtle);
-    border-radius: 20px; 
-    padding: 0.25rem 0.75rem;
-    font-size: 0.85rem;
-  }
-  .chip:hover:not(:disabled) {
-    border-color: var(--primary);
-    color: var(--primary);
-  } */
 
   .chip {
     border: 1px solid var(--border);
@@ -123,13 +109,6 @@
       inset 0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
       0 0 0 3px color-mix(in oklab, var(--primary) 16%, transparent);
   }
-
-  /* --- States --- */
-  /* .active {
-    background-color: var(--primary-soft);
-    color: var(--primary);
-    border-color: var(--primary-soft-border);
-  } */
 
   .base:disabled {
     opacity: 0.5;

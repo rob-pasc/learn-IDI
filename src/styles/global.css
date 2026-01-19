@@ -33,6 +33,17 @@
 /* applied themes layer found in "./themes" subfolder */
 
 @layer derived-tokens {
+  /*
+   * This layer defines derived design tokens based on the active theme tokens.
+   * Instead of hard-coding additional colors for hover, pressed, emphasis or
+   * subtle variants, we derive them consistently using `color-mix()`.
+   *
+   * This approach ensures:
+   * - visual consistency across all themes
+   * - fewer manual color definitions per theme
+   * - predictable behavior for surfaces, text and borders
+   * - easy future theming without refactoring component styles
+   */
   :root {
     --surface-elevated: color-mix(in oklab, var(--surface) 82%, white);
     --surface-hover: color-mix(in oklab, var(--surface) 88%, var(--primary));

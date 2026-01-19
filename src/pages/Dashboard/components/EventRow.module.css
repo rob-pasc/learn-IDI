@@ -1,0 +1,159 @@
+@layer components {
+  .row {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .dateCol {
+    border-right: 1px solid var(--border-subtle);
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 54px;
+  }
+
+  .dateMain {
+    font-weight: 900;
+    color: var(--text-strong);
+    font-size: 1.05rem;
+  }
+
+  .dateSub {
+    color: var(--muted);
+    margin-top: 2px;
+    font-size: 0.9rem;
+  }
+
+  .mainCol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .titleLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .title {
+    font-weight: 800;
+    color: var(--text-strong);
+    line-height: 1.2;
+  }
+
+  .kindBadge {
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .metaLine {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .metaPill {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: color-mix(in oklab, var(--surface) 85%, var(--bg));
+  }
+
+  .metaPillMuted {
+    opacity: 0.7;
+  }
+
+  .tagsWrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+  }
+
+  .badgePrimarySoft {
+    background: var(--primary-soft);
+    border-color: var(--primary-soft-border);
+    color: var(--text);
+  }
+
+  .badgeWarning {
+    background: var(--warning-soft);
+    border-color: color-mix(in oklab, var(--warning) 35%, var(--border));
+    color: var(--text);
+  }
+
+  .badgeInfo {
+    background: var(--info-soft);
+    border-color: color-mix(in oklab, var(--info) 35%, var(--border));
+    color: var(--text);
+  }
+
+  .badgeInfoSoft {
+    background: color-mix(in oklab, var(--info-soft) 65%, var(--surface));
+    border-color: var(--border);
+    color: var(--text);
+  }
+
+  .todayEvent {
+    border-color: var(--primary-soft-border);
+    background: var(--primary-soft);
+  }
+
+  /* Responsive: keep the same breakpoints as TimeTable.module.css */
+  @media (max-width: 700px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .dateCol {
+      border-right: none;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-right: 0;
+      padding-bottom: 0.6rem;
+      min-height: auto;
+
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .dateSub {
+      margin-top: 0;
+    }
+
+    .mainCol {
+      padding-top: 0.25rem;
+    }
+
+    .metaLine {
+      align-items: flex-start;
+    }
+  }
+}

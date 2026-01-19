@@ -1,4 +1,4 @@
-@layout components {
+@layer components {
  .pre {
     border: 1px solid var(--border);
     background: color-mix(in oklab, var(--surface) 90%, var(--bg));
@@ -9,7 +9,7 @@
     line-height: 1.45;
   }
 
-  /* Prism base tweaks (keine Farben hardcoden; wir lassen Prism default) */
+  /* Prism base tweaks */
   .pre :global(code) {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;

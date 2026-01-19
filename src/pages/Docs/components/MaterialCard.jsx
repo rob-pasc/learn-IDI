@@ -76,6 +76,7 @@ export default function MaterialCard({ item, onPreview }) {
   );
 }
 
+
 function typeClass(type, styles) {
   switch (type) {
     case "md":

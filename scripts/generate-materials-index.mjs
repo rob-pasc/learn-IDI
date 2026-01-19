@@ -61,7 +61,7 @@ async function main() {
     const courseDir = path.join(DOWNLOADS_DIR, courseId);
     const entries = await readDirSafe(courseDir);
 
-    // Collect files in this course dir (no subfolders expected)
+    // Collect files in this course dir 
     const files = [];
     for (const ent of entries) {
       if (!ent.isFile()) continue;

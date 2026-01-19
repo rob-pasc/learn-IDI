@@ -7,9 +7,8 @@ export default function Dashboard() {
         <div id="next-session" class="u-mb-3">  
           <NextSession />
         </div>
-        <div id="timetable">  {/*id zwecks Navigation*/}
+        <div id="timetable">  {/*id for navigation purposes*/}
           <TimeTable />
-        {/* </div> */}
       </div>
     </div>
   );

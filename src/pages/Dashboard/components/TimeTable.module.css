@@ -1,5 +1,5 @@
 @layer components {
- .card {
+  .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -85,7 +85,8 @@
     gap: 0.6rem;
   }
 
-  .row {
+  /* ---------- Today marker row (local to TimeTable) ---------- */
+  .markerRow {
     display: grid;
     grid-template-columns: 132px 1fr;
     gap: 1rem;
@@ -96,7 +97,7 @@
     box-shadow: var(--shadow-sm);
   }
 
-  .dateCol {
+  .markerDateCol {
     border-right: 1px solid var(--border-subtle);
     padding-right: 1rem;
     display: flex;
@@ -105,38 +106,38 @@
     min-height: 54px;
   }
 
-  .dateMain {
+  .markerDateMain {
     font-weight: 900;
     color: var(--text-strong);
     font-size: 1.05rem;
   }
 
-  .dateSub {
+  .markerDateSub {
     color: var(--muted);
     margin-top: 2px;
     font-size: 0.9rem;
   }
 
-  .mainCol {
+  .markerMainCol {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
   }
 
-  .titleLine {
+  .markerTitleLine {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
   }
 
-  .title {
+  .markerTitle {
     font-weight: 800;
     color: var(--text-strong);
     line-height: 1.2;
   }
 
-  .kindBadge {
+  .markerKindBadge {
     font-size: 0.8rem;
     font-weight: 800;
     padding: 0.2rem 0.55rem;
@@ -145,14 +146,14 @@
     white-space: nowrap;
   }
 
-  .metaLine {
+  .markerMetaLine {
     display: flex;
     align-items: center;
     gap: 0.6rem;
     flex-wrap: wrap;
   }
 
-  .metaPill {
+  .markerMetaPill {
     font-size: 0.85rem;
     color: var(--text-subtle);
     padding: 0.25rem 0.55rem;
@@ -161,50 +162,19 @@
     background: color-mix(in oklab, var(--surface) 85%, var(--bg));
   }
 
-  .metaPillMuted {
-    opacity: 0.7;
-  }
-
-  .tagsWrap {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    font-size: 0.82rem;
-    color: var(--muted);
-    padding: 0.15rem 0.45rem;
-    border-radius: 999px;
-    border: 1px solid var(--border-subtle);
-    background: transparent;
-  }
-
-  .badgePrimarySoft {
+  /* marker highlighting */
+  .todayMarker {
+    border-color: color-mix(in oklab, var(--info) 35%, var(--border));
     background: var(--primary-soft);
-    border-color: var(--primary-soft-border);
-    color: var(--text);
   }
 
-  .badgeWarning {
-    background: var(--warning-soft);
-    border-color: color-mix(in oklab, var(--warning) 35%, var(--border));
-    color: var(--text);
-  }
-
-  .badgeInfo {
-    background: var(--info-soft);
+  .badgeToday {
+    background: color-mix(in oklab, var(--info-soft) 70%, var(--surface));
     border-color: color-mix(in oklab, var(--info) 35%, var(--border));
     color: var(--text);
   }
 
-  .badgeInfoSoft {
-    background: color-mix(in oklab, var(--info-soft) 65%, var(--surface));
-    border-color: var(--border);
-    color: var(--text);
-  }
-
+  /* ---------- rest unchanged ---------- */
   .empty {
     padding: 1rem;
     border-radius: var(--radius-sm);
@@ -248,43 +218,6 @@
     border: 1px solid var(--border);
     background: color-mix(in oklab, var(--surface) 85%, var(--bg));
     box-shadow: var(--shadow-sm);
-  }
-
-  .navBtn {
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--surface-2);
-    color: var(--text);
-    cursor: pointer;
-    display: grid;
-    place-items: center;
-    box-shadow: var(--shadow-sm);
-    transition: background 120ms ease, border-color 120ms ease, opacity 120ms ease;
-  }
-
-  .navBtn:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-  }
-
-  .todayMarker {
-    /* background: color-mix(in oklab, var(--surface-2) 75%, var(--info-soft)); */
-    border-color: color-mix(in oklab, var(--info) 35%, var(--border));
-    background: var(--primary);
-  }
-
-  .todayEvent {
-    /* background: color-mix(in oklab, var(--surface-2) 75%, var(--primary-soft)); */
-    border-color: var(--primary-soft-border);
-    background: var(--primary-soft);
-  }
-
-  .badgeToday {
-    background: color-mix(in oklab, var(--info-soft) 70%, var(--surface));
-    border-color: color-mix(in oklab, var(--info) 35%, var(--border));
-    color: var(--text);
   }
 
   .monthPicker {
@@ -355,8 +288,7 @@
     padding: 0 0.85rem;
     border-radius: 999px;
     border: 1px solid var(--border);
-    /* background: var(--surface-2); */
-    background: var(--primary);
+    background: color-mix(in oklab, var(--primary) 50%, var(--primary-soft));
     color: var(--text);
     cursor: pointer;
     font-weight: 800;
@@ -380,33 +312,33 @@
 
   /* Tablet & Compact View */
   @media (max-width: 700px) {
-    .row {
-      grid-template-columns: 1fr; 
+    .markerRow {
+      grid-template-columns: 1fr;
       gap: 0.75rem;
     }
 
-    .dateCol {
+    .markerDateCol {
       border-right: none;
       border-bottom: 1px solid var(--border-subtle);
       padding-right: 0;
       padding-bottom: 0.6rem;
       min-height: auto;
-      
+
       flex-direction: row;
       justify-content: flex-start;
       align-items: baseline;
       gap: 0.75rem;
     }
 
-    .dateSub {
+    .markerDateSub {
       margin-top: 0;
     }
 
-    .mainCol {
+    .markerMainCol {
       padding-top: 0.25rem;
     }
-    
-    .metaLine {
+
+    .markerMetaLine {
       align-items: flex-start;
     }
   }
@@ -424,7 +356,7 @@
     }
 
     .toggleBtn {
-      flex: 1; 
+      flex: 1;
       justify-content: center;
     }
 
@@ -433,25 +365,27 @@
       gap: 0.5rem;
     }
 
-    /* DOM Order is: [Prev] [Picker] [Today] [Next]
-       We want visually:
-       Row 1: [Prev] [Picker (stretched)] [Next]
-       Row 2: [Today (full width)]
-    */
-    .monthNav > :nth-child(1) { order: 1; } /* Prev Button */
-    .monthNav > :nth-child(2) { order: 2; flex: 1; } /* Picker Div */
-    .monthNav > :nth-child(4) { order: 3; } /* Next Button */
-    
-    .monthNav > :nth-child(3) { 
-      order: 4; 
-      width: 100%; 
-      margin-top: 0.25rem; 
+    .monthNav > :nth-child(1) {
+      order: 1;
+    } /* Prev Button */
+    .monthNav > :nth-child(2) {
+      order: 2;
+      flex: 1;
+    } /* Picker Div */
+    .monthNav > :nth-child(4) {
+      order: 3;
+    } /* Next Button */
+
+    .monthNav > :nth-child(3) {
+      order: 4;
+      width: 100%;
+      margin-top: 0.25rem;
     }
 
     .monthPillBtn {
-      min-width: 0; 
+      min-width: 0;
       width: 100%;
-      padding-inline: 0.25rem; 
+      padding-inline: 0.25rem;
     }
 
     .todayBtn {

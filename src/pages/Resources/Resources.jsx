@@ -23,6 +23,7 @@ export default function ResourcesPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeTags, setActiveTags] = useState(new Set());
 
+
   useEffect(() => {
     fetch("/data/resources.json")
       .then((r) => {
@@ -42,13 +43,14 @@ export default function ResourcesPage() {
     return () => clearTimeout(timer);
   }, [data]);
 
+
   const resources = useMemo(() => {
     const list = Array.isArray(data?.resources) ? data.resources : Array.isArray(data) ? data : [];
     return list;
   }, [data]);
 
   const categories = useMemo(() => {
-    // We show: "all" + any categories found in data (sorted)
+    // we show: "all" + any categories found in data (sorted)
     const set = new Set(resources.map((r) => r.category).filter(Boolean));
     const arr = Array.from(set).sort();
     return ["all", ...arr];
@@ -105,6 +107,7 @@ export default function ResourcesPage() {
   const pinned = useMemo(() => filtered.filter((r) => r.pinned), [filtered]);
   const rest = useMemo(() => filtered.filter((r) => !r.pinned), [filtered]);
 
+
   function toggleTag(tag) {
     setActiveTags((prev) => {
       const next = new Set(prev);
@@ -120,6 +123,7 @@ export default function ResourcesPage() {
     setActiveTags(new Set());
   }
 
+
   if (error) {
     return <div className={styles.notice}>{error}</div>;
   }
@@ -128,6 +132,7 @@ export default function ResourcesPage() {
     return showLoading ? <div className={styles.notice}>Lade Ressourcen…</div> : null;
   }
 
+  
   return (
     <div className="u-container">
       <main className={styles.page}>

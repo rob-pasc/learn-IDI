@@ -25,37 +25,24 @@ npm install
 npm run dev
 ```
 
-Danach die angezeigte URL im Browser öffnen (typischerweise `http://localhost:5173`).
+Danach die angezeigte URL im Browser öffnen.
 
 ####  Browser-Hinweis
 Für die beste Darstellung wird ein aktueller Chromium-basierter Browser wie **Google Chrome** oder **Microsoft Edge** empfohlen, da diese alle im Projekt verwendeten modernen CSS-Features vollständig unterstützen.  
 Die Anwendung ist jedoch auch in anderen modernen Browsern nutzbar; einzelne visuelle Details können dort geringfügig abweichen, die Funktionalität bleibt jedoch immer erhalten.
 
-
 ---
 
-## Daten & Inhalte
-
-### Unterlagen (Downloads)
-
-Unterlagen liegen unter:
-
-```
-public/downloads/
-  web/
-  rdb/
-  prog/
-  nosql/
-```
-
-In diesen Ordnern befinden sich ausschließlich Dateien vom Typ `.zip`, `.md`, `.pdf`, `.sql` (sollte nicht allzu groß sein; keine Unterordner).
-
-### Automatische Index-Generierung
+### Anmerkung 1: Automatische Index-Generierung
 
 Beim Starten von `dev` sowie vor `build` wird automatisch ein Index generiert:
 
 * Script: `scripts/generate-materials-index.mjs`
 * Output: `public/data/materials.index.json`
 
-Dieser Index wird im Frontend verwendet, um die Unterlagen dynamisch anzuzeigen.
+Dieser Index wird im Frontend verwendet, um die *Unterlagen* dynamisch anzuzeigen.
+Ist dies erfolgreich, sollte in der Konsole so etwas wie `[gen] wrote /data/materials.index.json with 26 items` angezeigt werden.
 
+### Anmerkung 2: Hosting
+
+Die Website ist in diesem Zustand auch auf Render gehostet. Sollte aus irgendeinem Grund der lokale Build fehlschlagen, wäre sie hier zur Gänze einsehbar: [learn-idi.onrender.com](https://learn-idi.onrender.com/)

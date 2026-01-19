@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-19T12:10:44.380Z",
+  "generatedAt": "2026-01-19T22:16:48.687Z",
   "courses": [
     {
       "id": "web",
@@ -32,20 +32,20 @@
   ],
   "items": [
     {
-      "id": "web-wa-04-beispiel-implementierung-zip",
-      "courseId": "web",
-      "semester": 1,
+      "id": "prog-introductiontoprogramming-zip",
+      "courseId": "prog",
+      "semester": 2,
       "type": "zip",
-      "title": "WA-04_Beispiel-Implementierung.zip",
+      "title": "IntroductionToProgramming.zip",
       "paths": {
-        "main": "/downloads/web/WA-04_Beispiel-Implementierung.zip"
+        "main": "/downloads/prog/IntroductionToProgramming.zip"
       },
       "tags": [
-        "web",
-        "sem1",
+        "prog",
+        "sem2",
         "zip"
       ],
-      "mtimeMs": 1768824154068.2412
+      "mtimeMs": 1768670979375.308
     },
     {
       "id": "web-einheit-10-09-12-2025-zip",
@@ -61,7 +61,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153983.275
+      "mtimeMs": 1768669758015.7212
     },
     {
       "id": "web-einheit-09-06-12-2025-zip",
@@ -77,7 +77,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153975.6436
+      "mtimeMs": 1768669753851.9565
     },
     {
       "id": "web-einheit-08-25-10-2025-zip",
@@ -93,7 +93,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153948.0925
+      "mtimeMs": 1768669749195.5078
     },
     {
       "id": "web-einheit-07-21-10-2025-zip",
@@ -109,7 +109,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153943.262
+      "mtimeMs": 1768669744816.3062
     },
     {
       "id": "web-einheit-06-18-10-2025-zip",
@@ -125,23 +125,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153939.7063
-    },
-    {
-      "id": "web-einheit-04-11-10-2025-zip",
-      "courseId": "web",
-      "semester": 1,
-      "type": "zip",
-      "title": "Einheit-04_11-10-2025.zip",
-      "paths": {
-        "main": "/downloads/web/Einheit-04_11-10-2025.zip"
-      },
-      "tags": [
-        "web",
-        "sem1",
-        "zip"
-      ],
-      "mtimeMs": 1768824153932.897
+      "mtimeMs": 1768669739740.1938
     },
     {
       "id": "web-einheit-05-14-10-2025-zip",
@@ -157,7 +141,23 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153932.897
+      "mtimeMs": 1768669735622.4326
+    },
+    {
+      "id": "web-einheit-04-11-10-2025-zip",
+      "courseId": "web",
+      "semester": 1,
+      "type": "zip",
+      "title": "Einheit-04_11-10-2025.zip",
+      "paths": {
+        "main": "/downloads/web/Einheit-04_11-10-2025.zip"
+      },
+      "tags": [
+        "web",
+        "sem1",
+        "zip"
+      ],
+      "mtimeMs": 1768669730422.7695
     },
     {
       "id": "web-einheit-03-07-10-2025-zip",
@@ -173,7 +173,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153925.2683
+      "mtimeMs": 1768669720469.7622
     },
     {
       "id": "web-einheit-02-04-10-2025-zip",
@@ -189,7 +189,7 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153921.2158
+      "mtimeMs": 1768669715182.5974
     },
     {
       "id": "web-einheit-01-30-09-2025-zip",
@@ -205,71 +205,23 @@
         "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153918.6821
+      "mtimeMs": 1768662166959.041
     },
     {
-      "id": "rdb-northwind-sql",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "sql",
-      "title": "Northwind.sql",
-      "paths": {
-        "main": "/downloads/rdb/Northwind.sql"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "sql"
-      ],
-      "mtimeMs": 1768824153914.6287
-    },
-    {
-      "id": "rdb-northwind-small-sql",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "sql",
-      "title": "Northwind-small.sql",
-      "paths": {
-        "main": "/downloads/rdb/Northwind-small.sql"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "sql"
-      ],
-      "mtimeMs": 1768824153909.4785
-    },
-    {
-      "id": "rdb-northwind-small-inserts-sql",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "sql",
-      "title": "Northwind-small-inserts.sql",
-      "paths": {
-        "main": "/downloads/rdb/Northwind-small-inserts.sql"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "sql"
-      ],
-      "mtimeMs": 1768824153903.8586
-    },
-    {
-      "id": "rdb-logistik-verbundsystem",
-      "courseId": "rdb",
-      "semester": 1,
+      "id": "prog-prep",
+      "courseId": "prog",
+      "semester": 2,
       "type": "md",
-      "title": "Logistik-Verbundsystem.md",
+      "title": "Prep.md",
       "paths": {
-        "main": "/downloads/rdb/Logistik-Verbundsystem.md"
+        "main": "/downloads/prog/Prep.md"
       },
       "tags": [
-        "rdb",
-        "sem1",
+        "prog",
+        "sem2",
         "md"
       ],
-      "mtimeMs": 1768824153901.8264
+      "mtimeMs": 1768646836185.746
     },
     {
       "id": "rdb-konzeptionell-logisch",
@@ -285,103 +237,7 @@
         "sem1",
         "md"
       ],
-      "mtimeMs": 1768824153897.7817
-    },
-    {
-      "id": "rdb-it-berwachung",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "md",
-      "title": "IT-Überwachung.md",
-      "paths": {
-        "main": "/downloads/rdb/IT-Überwachung.md"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "md"
-      ],
-      "mtimeMs": 1768824153890.3137
-    },
-    {
-      "id": "rdb-exercises-subquery",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "md",
-      "title": "Exercises_Subquery.md",
-      "paths": {
-        "main": "/downloads/rdb/Exercises_Subquery.md"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "md"
-      ],
-      "mtimeMs": 1768824153887.7605
-    },
-    {
-      "id": "rdb-exercises-joins-3",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "md",
-      "title": "Exercises_Joins_3.md",
-      "paths": {
-        "main": "/downloads/rdb/Exercises_Joins_3.md"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "md"
-      ],
-      "mtimeMs": 1768824153885.721
-    },
-    {
-      "id": "rdb-exercises-joins-2",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "md",
-      "title": "Exercises_Joins_2.md",
-      "paths": {
-        "main": "/downloads/rdb/Exercises_Joins_2.md"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "md"
-      ],
-      "mtimeMs": 1768824153883.1616
-    },
-    {
-      "id": "rdb-exercises-joins",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "md",
-      "title": "Exercises_Joins.md",
-      "paths": {
-        "main": "/downloads/rdb/Exercises_Joins.md"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "md"
-      ],
-      "mtimeMs": 1768824153881.132
-    },
-    {
-      "id": "rdb-exercise-models",
-      "courseId": "rdb",
-      "semester": 1,
-      "type": "md",
-      "title": "Exercise_Models.md",
-      "paths": {
-        "main": "/downloads/rdb/Exercise_Models.md"
-      },
-      "tags": [
-        "rdb",
-        "sem1",
-        "md"
-      ],
-      "mtimeMs": 1768824153874.2993
+      "mtimeMs": 1768051877643.25
     },
     {
       "id": "rdb-cheatsheet-v2",
@@ -399,7 +255,151 @@
         "md",
         "pdf"
       ],
-      "mtimeMs": 1768824153864.3672
+      "mtimeMs": 1768041597667.5466
+    },
+    {
+      "id": "rdb-it-berwachung",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "IT-Überwachung.md",
+      "paths": {
+        "main": "/downloads/rdb/IT-Überwachung.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1765883614000
+    },
+    {
+      "id": "rdb-logistik-verbundsystem",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "Logistik-Verbundsystem.md",
+      "paths": {
+        "main": "/downloads/rdb/Logistik-Verbundsystem.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1765622340887.6252
+    },
+    {
+      "id": "rdb-exercise-models",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "Exercise_Models.md",
+      "paths": {
+        "main": "/downloads/rdb/Exercise_Models.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1765304107000
+    },
+    {
+      "id": "rdb-exercises-joins-3",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "Exercises_Joins_3.md",
+      "paths": {
+        "main": "/downloads/rdb/Exercises_Joins_3.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1764409711698.7168
+    },
+    {
+      "id": "rdb-exercises-joins-2",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "Exercises_Joins_2.md",
+      "paths": {
+        "main": "/downloads/rdb/Exercises_Joins_2.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1764063544000
+    },
+    {
+      "id": "rdb-exercises-joins",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "Exercises_Joins.md",
+      "paths": {
+        "main": "/downloads/rdb/Exercises_Joins.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1763807339779.8054
+    },
+    {
+      "id": "rdb-northwind-small-inserts-sql",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "sql",
+      "title": "Northwind-small-inserts.sql",
+      "paths": {
+        "main": "/downloads/rdb/Northwind-small-inserts.sql"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "sql"
+      ],
+      "mtimeMs": 1763461068000
+    },
+    {
+      "id": "rdb-exercises-subquery",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "md",
+      "title": "Exercises_Subquery.md",
+      "paths": {
+        "main": "/downloads/rdb/Exercises_Subquery.md"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "md"
+      ],
+      "mtimeMs": 1763203252955.0962
+    },
+    {
+      "id": "rdb-northwind-small-sql",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "sql",
+      "title": "Northwind-small.sql",
+      "paths": {
+        "main": "/downloads/rdb/Northwind-small.sql"
+      },
+      "tags": [
+        "rdb",
+        "sem1",
+        "sql"
+      ],
+      "mtimeMs": 1763196621520.301
     },
     {
       "id": "rdb-cheatsheet",
@@ -417,39 +417,39 @@
         "md",
         "pdf"
       ],
-      "mtimeMs": 1768824153822.37
+      "mtimeMs": 1762780479000
     },
     {
-      "id": "prog-prep",
-      "courseId": "prog",
-      "semester": 2,
-      "type": "md",
-      "title": "Prep.md",
+      "id": "rdb-northwind-sql",
+      "courseId": "rdb",
+      "semester": 1,
+      "type": "sql",
+      "title": "Northwind.sql",
       "paths": {
-        "main": "/downloads/prog/Prep.md"
+        "main": "/downloads/rdb/Northwind.sql"
       },
       "tags": [
-        "prog",
-        "sem2",
-        "md"
+        "rdb",
+        "sem1",
+        "sql"
       ],
-      "mtimeMs": 1768824153818.7964
+      "mtimeMs": 1762595987942.497
     },
     {
-      "id": "prog-introductiontoprogramming-zip",
-      "courseId": "prog",
-      "semester": 2,
+      "id": "web-wa-04-beispiel-implementierung-zip",
+      "courseId": "web",
+      "semester": 1,
       "type": "zip",
-      "title": "IntroductionToProgramming.zip",
+      "title": "WA-04_Beispiel-Implementierung.zip",
       "paths": {
-        "main": "/downloads/prog/IntroductionToProgramming.zip"
+        "main": "/downloads/web/WA-04_Beispiel-Implementierung.zip"
       },
       "tags": [
-        "prog",
-        "sem2",
+        "web",
+        "sem1",
         "zip"
       ],
-      "mtimeMs": 1768824153816.2334
+      "mtimeMs": 1760959164000
     }
   ]
 }

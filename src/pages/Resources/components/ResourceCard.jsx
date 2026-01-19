@@ -58,6 +58,7 @@ export default function ResourceCard({ resource, categoryLabelsDE, activeCategor
   );
 }
 
+
 function prettifyUrl(url) {
   try {
     const u = new URL(url);

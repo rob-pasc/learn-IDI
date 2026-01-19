@@ -127,41 +127,6 @@
     flex-wrap: wrap;
   }
 
-  .btnPrimary {
-    border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--border));
-    background: var(--primary);
-    color: white;
-    border-radius: var(--radius-sm);
-    padding: 0.55rem 0.9rem;
-    cursor: pointer;
-    font-weight: 800;
-    transition: transform 0.06s ease, background 0.15s ease, border-color 0.15s ease;
-  }
-
-  .btnPrimary:hover {
-    background: var(--primary-hover);
-  }
-
-  .btnPrimary:active {
-    transform: translateY(1px);
-    background: var(--primary-pressed);
-  }
-
-  .btnGhost {
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text);
-    border-radius: var(--radius-sm);
-    padding: 0.55rem 0.9rem;
-    cursor: pointer;
-    font-weight: 800;
-    transition: background 0.15s ease, border-color 0.15s ease;
-  }
-
-  .btnGhost:hover {
-    background: var(--surface-hover);
-  }
-
   .kindBadge {
     font-size: 0.8rem;
     font-weight: 900;

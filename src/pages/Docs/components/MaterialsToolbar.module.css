@@ -46,26 +46,6 @@
     color: var(--muted);
   }
 
-  .clearBtn {
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text);
-    border-radius: var(--radius-sm);
-    padding: 0.55rem 0.85rem;
-    cursor: pointer;
-    font-weight: 900;
-    transition: background 120ms ease, opacity 120ms ease;
-  }
-
-  .clearBtn:hover {
-    background: var(--surface-hover);
-  }
-
-  .clearBtn:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-  }
-
   .controls {
     display: flex;
     gap: var(--space-3);

@@ -20,6 +20,7 @@ export default function MaterialsPage() {
 
   const [previewItem, setPreviewItem] = useState(null);
 
+
   useEffect(() => {
     fetch("/data/materials.index.json")
       .then((r) => {
@@ -38,6 +39,7 @@ export default function MaterialsPage() {
     }
     return () => clearTimeout(timer);
   }, [data]);
+
 
   const courses = useMemo(() => {
     const list = Array.isArray(data?.courses) ? data.courses : [];
@@ -73,6 +75,7 @@ export default function MaterialsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courses.map((c) => c.id).join("|"), items.length]);
 
+
   const activeCourse = useMemo(() => {
     if (!activeCourseId) return null;
     return courses.find((c) => c.id === activeCourseId) ?? null;
@@ -87,10 +90,10 @@ export default function MaterialsPage() {
     const q = query.trim().toLowerCase();
 
     let list = baseList.filter((it) => {
-      // Type filter
+      // type filter
       if (typeFilters.size > 0) {
         const matchesType = typeFilters.has(it.type);
-        // Prüfen, ob nach PDF gefiltert wird UND ob das Item ein PDF besitzt
+        // item is either PDF or has a corresponding PDF file
         const matchesPdfVariant = typeFilters.has("pdf") && !!it.paths?.pdf;
 
         if (!matchesType && !matchesPdfVariant) return false;
@@ -119,18 +122,18 @@ export default function MaterialsPage() {
   const countsByType = useMemo(() => {
     const c = { md: 0, sql: 0, zip: 0, pdf: 0 };
     for (const it of baseList) {
-      // 1. Zähle das Item zu seinem Haupt-Typ (z.B. 'md' oder 'sql')
+      // Count by type
       if (c[it.type] !== undefined) c[it.type] += 1;
 
-      // 2. SPEZIALFALL: Wenn das Item nicht vom Typ 'pdf' ist, aber 
-      //    trotzdem einen PDF-Pfad besitzt (z.B. Cheatsheets), 
-      //    dann erhöhe auch den PDF-Zähler.
+      // 2. Special case: If the item is not of type 'pdf' but has
+      //    a PDF path, increment the PDF count as well.
       if (it.type !== 'pdf' && it.paths?.pdf) {
         c.pdf += 1;
       }
     }
     return c;
   }, [baseList]);
+
 
   function toggleType(type) {
     setTypeFilters((prev) => {
@@ -147,11 +150,13 @@ export default function MaterialsPage() {
     setSortBy("newest");
   }
 
+
   if (error) return <div className={styles.notice}>{error}</div>;
   
   if (!data) {
     return showLoading ? <div className={styles.notice}>Lade Dokumente...</div> : null;
   }
+  
 
   return (
     <div className="u-container u-stack">

@@ -19,6 +19,6 @@
     --select-col: #fff;
     --select-col-bg: #c586c0;
 
-    --learn-idi-icon: #71a0ff;
+    --learn-idi-icon: var(--info);
   }
 }

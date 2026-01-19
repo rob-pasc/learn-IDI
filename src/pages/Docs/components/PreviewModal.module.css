@@ -59,24 +59,6 @@
     flex-wrap: wrap;
   }
 
-  .btnGhost {
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 0.8rem;
-    cursor: pointer;
-    font-weight: 900;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .btnGhost:hover {
-    background: var(--surface-hover);
-  }
-
   .btnClose {
     width: 40px;
     height: 40px;

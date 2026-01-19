@@ -25,7 +25,7 @@
 )
 
 #show raw.where(block: false): it => box(
-  fill: luma(240),
+  fill: luma(220),
   outset: 2pt,
   radius: 3pt,
   it
@@ -86,7 +86,7 @@ Zusätzlich besitzt jede Seite einen eigenen Unterordner `components`, in dem au
 Innerhalb dieses `components`-Ordners habe ich auf weitere Verschachtelungen verzichtet, da mir eine möglichst flache Ordnerstruktur wichtig war. Dadurch bleibt die Navigation im Projekt übersichtlich und die Zugehörigkeit einer Komponente zu einer Seite ist jederzeit eindeutig erkennbar.
 
 === 2.1.2 Styling mit CSS Modules
-Für das Styling einzelner Komponenten habe ich ausschließlich CSS Modules verwendet. Jede `.jsx`-Datei besitzt eine gleichnamige `.module.css`-Datei, in der ausschließlich die Styles dieser Komponente definiert sind.  
+Für das Styling einzelner Komponenten habe ich CSS Modules verwendet, unterstützt von ein paar wenigen, global definierten Utility Klassen. Jede `.jsx`-Datei besitzt eine gleichnamige `.module.css`-Datei, in der ausschließlich die Styles dieser Komponente definiert sind.  
 Der Hauptgrund für diese Entscheidung ist die automatische Kapselung von CSS-Klassen: Klassennamen sind lokal scoped und können sich somit nicht unbeabsichtigt gegenseitig überschreiben. Dadurch entfallen viele typische Probleme von globalem CSS, insbesondere bei wachsenden Projekten. Zusätzlich erleichtert dieser Ansatz das Refactoring und Wiederverwenden von Komponenten, da Styles und Logik immer gemeinsam betrachtet werden können.
 
 === 2.1.3 Globales CSS-Konzept mit Layern
@@ -119,7 +119,7 @@ Auch hier in der Dokumentation findet Künstliche Intelligenz sinnvolle Verwendu
 Da *learn-IDI* mein erstes Projekt mit React ist, gab es während der Entwicklung einige Entscheidungen, bei denen ich unsicher war, ob sie gängigen Best Practices entsprechen oder eher aus meiner eigenen Intuition heraus entstanden sind. Ein Beispiel dafür ist der Umgang mit Icons. SVG-Icons, die ein fester Bestandteil der Website sind, habe ich gesammelt in einer zentralen JSX-Datei (`/src/components/Icons.jsx`) abgelegt und importiere sie von dort als Komponenten, wo sie benötigt werden. Icons, die als Logos für externe Ressourcen dienen, liegen hingegen als separate `.svg`-Dateien vor.
 Dieser Ansatz erscheint mir logisch und übersichtlich, da zwischen statischen UI-Icons und austauschbaren Ressourcen klar unterschieden wird. Gleichzeitig bleibt offen, ob ein erfahrener React-Entwickler diesen Weg ebenfalls wählen würde oder stattdessen auf Icon-Libraries, dynamische Imports oder ausschließlich statische Assets setzen würde.
 
-Ähnliche Unsicherheiten gab es bei der Wiederverwendung von UI-Komponenten. Rückblickend stellt sich die Frage, ob es sinnvoll gewesen wäre, mehr allgemeine, seitenübergreifend genutzte UI-Komponenten (zB. Buttons, Cards, Filterleisten) in einem gemeinsamen Verzeichnis wie `src/components/ui` zu bündeln, anstatt bestimmte Layout- und Styling-Entscheidungen stärker in den jeweiligen CSS Modules der einzelnen Seiten zu belassen. Zwar sorgt der aktuelle Ansatz für eine sehr klare Zuordnung von Logik und Styling, allerdings könnte ein stärker abstrahiertes UI-Layer die Wiederverwendbarkeit und Konsistenz bei weiterem Projektwachstum noch erhöhen.
+Ähnliche Unsicherheiten gab es bei der Wiederverwendung von UI-Komponenten. Rückblickend stellt sich die Frage, ob es sinnvoll gewesen wäre, mehr allgemeine, seitenübergreifend genutzte UI-Komponenten (zB. Cards, Filterleisten, ...) in einem gemeinsamen Verzeichnis wie `src/components/ui` zu bündeln, anstatt bestimmte Layout- und Styling-Entscheidungen stärker in den jeweiligen CSS Modules der einzelnen Seiten zu belassen. Zwar sorgt der aktuelle Ansatz für eine sehr klare Zuordnung von Logik und Styling, allerdings könnte ein stärker abstrahiertes UI-Layer die Wiederverwendbarkeit und Konsistenz bei weiterem Projektwachstum noch erhöhen.
 
 == 3.2 Meine Lernerkenntnisse
 Vor diesem Projekt habe ich Websites hauptsächlich entweder mit klassischem HTML, CSS und JavaScript in Kombination mit PHP oder Node.js umgesetzt oder auf bestehende Content-Management-Systeme wie WordPress zurückgegriffen. Im Vergleich dazu stellt das Arbeiten mit React einen deutlich anderen Denkansatz dar. Statt Seiten als statische Dokumente zu betrachten, steht das Zerlegen der Oberfläche in wiederverwendbare, zustandsabhängige Komponenten im Vordergrund.

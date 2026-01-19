@@ -5,12 +5,11 @@ import SqlPreview from "./SqlPreview";
 import Button from "../../../components/ui/Button";
 
 export default function PreviewModal({ item, onClose }) {
-  const [text, setText] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState("");
+  const [state, setState] = useState({ text: "", loading: true, err: "" });
 
   const isMd = item.type === "md";
   const isSql = item.type === "sql";
+
 
   useEffect(() => {
     function onKey(e) {
@@ -22,9 +21,6 @@ export default function PreviewModal({ item, onClose }) {
 
   useEffect(() => {
     let alive = true;
-    setLoading(true);
-    setErr("");
-    setText("");
 
     fetch(item.paths?.main)
       .then((r) => {
@@ -33,13 +29,11 @@ export default function PreviewModal({ item, onClose }) {
       })
       .then((t) => {
         if (!alive) return;
-        setText(t);
-        setLoading(false);
+        setState({ text: t, loading: false, err: "" });
       })
       .catch(() => {
         if (!alive) return;
-        setErr("Preview konnte nicht geladen werden.");
-        setLoading(false);
+        setState({ text: "", loading: false, err: "Preview konnte nicht geladen werden." });
       });
 
     return () => {
@@ -48,6 +42,7 @@ export default function PreviewModal({ item, onClose }) {
   }, [item]);
 
   const title = useMemo(() => item.title ?? "Preview", [item]);
+
 
   return (
     <>
@@ -60,9 +55,6 @@ export default function PreviewModal({ item, onClose }) {
           </div>
 
           <div className={styles.headRight}>
-            {/* <a className={styles.btnGhost} href={item.paths?.main} download>
-              Download
-            </a> */}
             <Button 
                variant="ghost" 
                href={item.paths?.main} 
@@ -70,11 +62,7 @@ export default function PreviewModal({ item, onClose }) {
             >
               Download
             </Button>
-            {/* {isMd && item.paths?.pdf && (
-              <a className={styles.btnGhost} href={item.paths.pdf} download>
-                PDF
-              </a>
-            )} */}
+
             {isMd && item.paths?.pdf && (
               <Button 
                  variant="ghost" 
@@ -84,9 +72,7 @@ export default function PreviewModal({ item, onClose }) {
                 PDF
               </Button>
             )}
-            {/* <button className={styles.btnClose} onClick={onClose} type="button">
-              ✕
-            </button> */}
+
             <Button 
               variant="icon" 
               onClick={onClose}
@@ -98,14 +84,14 @@ export default function PreviewModal({ item, onClose }) {
         </header>
 
         <div className={styles.body}>
-          {loading ? (
+          {state.loading ? (
             <div className={styles.notice}>Lade Preview…</div>
-          ) : err ? (
-            <div className={styles.notice}>{err}</div>
+          ) : state.err ? (
+            <div className={styles.notice}>{state.err}</div>
           ) : isMd ? (
-            <MarkdownPreview markdown={text} />
+            <MarkdownPreview markdown={state.text} />
           ) : isSql ? (
-            <SqlPreview sql={text} />
+            <SqlPreview sql={state.text} />
           ) : (
             <div className={styles.notice}>Für diesen Dateityp gibt es keine Preview.</div>
           )}
