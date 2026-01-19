@@ -19,6 +19,38 @@
 
   /* --- Variants --- */
 
+  /* Primary (New: matches NextSession/TimeTable primary buttons) */
+  .primary {
+    border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--border));
+    background: var(--primary);
+    color: white;
+    font-weight: 800;
+    box-shadow: var(--shadow-sm);
+  }
+  .primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+  }
+  .primary:active:not(:disabled) {
+    transform: translateY(1px);
+    background: var(--primary-pressed);
+  }
+
+  /* Subtle (New: transparent background, no border, for options/toggles) */
+  .subtle {
+    border-color: transparent;
+    background: transparent;
+    color: var(--text);
+      
+    &.active {
+      background: var(--primary-soft);
+      color: var(--text);
+      box-shadow: inset 0 0 0 1px var(--primary-soft-border);
+    }
+  }
+  .subtle:hover:not(:disabled) {
+    background: var(--surface-hover);
+  }
+
   /* Standard Ghost (used for "Zurücksetzen" / "Download") */
   .ghost {
     color: var(--text-subtle);

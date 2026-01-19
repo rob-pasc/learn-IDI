@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import Button from "../../../components/ui/Button";
 import styles from "./TimeTable.module.css";
 import { 
   timeSlotForWeekday, 
@@ -159,7 +160,7 @@ export default function TimeTable() {
         </div>
 
         <div className={styles.toggle}>
-          <button
+          {/* <button
             type="button"
             onClick={() => setSemester("Sem1")}
             aria-pressed={semester === "Sem1"}
@@ -168,8 +169,16 @@ export default function TimeTable() {
             }`}
           >
             Sem 1
-          </button>
-          <button
+          </button> */}
+          <Button
+            variant="subtle"
+            onClick={() => setSemester("Sem1")}
+            active={semester === "Sem1"}
+            className={styles.toggleBtn}
+          >
+            Sem 1
+          </Button>
+          {/* <button
             type="button"
             onClick={() => setSemester("Sem2")}
             aria-pressed={semester === "Sem2"}
@@ -178,7 +187,15 @@ export default function TimeTable() {
             }`}
           >
             Sem 2
-          </button>
+          </button> */}
+          <Button
+            variant="subtle"
+            onClick={() => setSemester("Sem2")}
+            active={semester === "Sem2"}
+            className={styles.toggleBtn}
+          >
+            Sem 2
+          </Button>
         </div>
       </header>
 
@@ -194,7 +211,7 @@ export default function TimeTable() {
           <>
             {/* Month navigation */}
             <div className={styles.monthNav}>
-              <button
+              {/* <button
                 type="button"
                 className={styles.navBtn}
                 onClick={handlePrevMonth}
@@ -203,10 +220,19 @@ export default function TimeTable() {
                 title="Vorheriger Monat"
               >
                 ←
-              </button>
+              </button> */}
+              <Button
+                variant="icon"
+                onClick={handlePrevMonth}
+                disabled={monthIndex <= 0}
+                aria-label="Vorheriger Monat"
+                title="Vorheriger Monat"
+              >
+                ←
+              </Button>
 
               <div className={styles.monthPicker}>
-                <button
+                {/* <button
                   type="button"
                   className={styles.monthPillBtn}
                   onClick={() => setMonthOpen((v) => !v)}
@@ -216,9 +242,20 @@ export default function TimeTable() {
                 >
                   {monthKey ? formatMonth(monthKey) : "—"}{" "}
                   <span className={styles.caret}>▾</span>
-                </button>
+                </button> */}
+                <Button
+                  variant="ghost"
+                  className={styles.monthPillBtn}
+                  onClick={() => setMonthOpen((v) => !v)}
+                  aria-haspopup="listbox"
+                  aria-expanded={monthOpen}
+                  title="Monat auswählen"
+                >
+                  {monthKey ? formatMonth(monthKey) : "—"}{" "}
+                  <span className={styles.caret}>▾</span>
+                </Button>
 
-                {monthOpen && (
+                {/* {monthOpen && (
                   <div className={styles.monthDropdown} role="listbox">
                     {months.map((m) => {
                       const active = m === monthKey;
@@ -240,19 +277,45 @@ export default function TimeTable() {
                       );
                     })}
                   </div>
+                )} */}
+                {monthOpen && (
+                  <div className={styles.monthDropdown} role="listbox">
+                    {months.map((m) => (
+                      <Button
+                        key={m}
+                        variant="subtle"
+                        className={styles.monthOption}
+                        active={m === monthKey}
+                        onClick={() => {
+                          setMonthKey(m);
+                          setMonthOpen(false);
+                        }}
+                      >
+                        {formatMonth(m)}
+                      </Button>
+                    ))}
+                  </div>
                 )}
               </div>
 
-              <button
+              {/* <button
                 type="button"
                 className={styles.todayBtn}
                 onClick={handleJumpToday}
                 title="Zum heutigen Datum springen"
               >
                 Heute
-              </button>
+              </button> */}
+              <Button
+                variant="primary"
+                className={styles.todayBtn}
+                onClick={handleJumpToday}
+                title="Zum heutigen Datum springen"
+              >
+                Heute
+              </Button>
 
-              <button
+              {/* <button
                 type="button"
                 className={styles.navBtn}
                 onClick={handleNextMonth}
@@ -261,7 +324,16 @@ export default function TimeTable() {
                 title="Nächster Monat"
               >
                 →
-              </button>
+              </button> */}
+              <Button
+                variant="icon"
+                onClick={handleNextMonth}
+                disabled={monthIndex === -1 || monthIndex >= months.length - 1}
+                aria-label="Nächster Monat"
+                title="Nächster Monat"
+              >
+                →
+              </Button>
             </div>
 
             {/* Month content */}
@@ -305,7 +377,7 @@ export default function TimeTable() {
         )}
       </div>
 
-      {/* click-away overlay for dropdown */}
+      {/* click-away overlay for dropdown - not using <Button> because it's not a real button */}
       {monthOpen && (
         <button
           type="button"

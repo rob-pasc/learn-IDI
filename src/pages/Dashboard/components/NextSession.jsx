@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import Button from "../../../components/ui/Button";
 import styles from "./NextSession.module.css";
 import { 
   timeSlotForWeekday, 
@@ -13,6 +14,15 @@ export default function NextSession() {
   const [sem1, setSem1] = useState(null);
   const [sem2, setSem2] = useState(null);
   const [error, setError] = useState("");
+
+  const [showToast, setShowToast] = useState(false);
+  // 2. Auto-hide toast after 2 seconds
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => setShowToast(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   useEffect(() => {
     Promise.all([
@@ -59,8 +69,6 @@ export default function NextSession() {
 
     return null;
   }, [sem1, sem2, todayIso]);
-
-
 
   if (error) {
     return <div className={styles.notice}>{error}</div>;
@@ -139,7 +147,7 @@ export default function NextSession() {
         </div>
 
         <div className={styles.actions}>
-          <button
+          {/* <button
             type="button"
             className={styles.btnPrimary}
             onClick={() => {
@@ -148,9 +156,18 @@ export default function NextSession() {
             }}
           >
             Zum Timetable ↓
-          </button>
+          </button> */}
+          <Button
+            variant="primary"
+            onClick={() => {
+              const el = document.getElementById("timetable");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          >
+            Zum Timetable ↓
+          </Button>
 
-          <button
+          {/* <button
             type="button"
             className={styles.btnGhost}
             onClick={() => {
@@ -159,9 +176,26 @@ export default function NextSession() {
             title="Zusammenfassung kopieren"
           >
             Copy Summary
-          </button>
+          </button> */}
+          <Button
+            variant="ghost"
+            onClick={() => {
+              navigator.clipboard?.writeText(summaryLine(next));
+              setShowToast(true);
+            }}
+            title="Zusammenfassung kopieren"
+          >
+            Zusammenfassung
+          </Button>
         </div>
       </div>
+
+      {showToast && (
+        <div className={styles.toast} role="status">
+          <span className={styles.checkIcon}>✓</span>
+          In die Zwischenablage kopiert
+        </div>
+      )}
     </section>
   );
 }
@@ -191,7 +225,6 @@ function renderLocationPills(location, styles) {
 
   const s = location.toLowerCase();
 
-  // Hybrid -> two pills (as requested)
   if (s.includes("hybrid")) {
     return (
       <>
@@ -201,16 +234,13 @@ function renderLocationPills(location, styles) {
     );
   }
 
-  // Online
   if (s.includes("teams") || s.includes("online")) {
     return <span className={styles.metaPill}>🌐 online – MS Teams</span>;
   }
 
-  // FHV / onsite
   if (s.includes("fhv")) {
     return <span className={styles.metaPill}>🏫 vor Ort – FHV</span>;
   }
 
-  // fallback: show original text
   return <span className={styles.metaPill}>📍 {location}</span>;
 }
