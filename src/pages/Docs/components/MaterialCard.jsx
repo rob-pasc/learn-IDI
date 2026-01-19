@@ -1,4 +1,5 @@
 import styles from "./MaterialCard.module.css";
+import { PdfIcon } from "../../../components/Icons";
 
 export default function MaterialCard({ item, onPreview }) {
   const title = item.title ?? "—";
@@ -67,7 +68,7 @@ export default function MaterialCard({ item, onPreview }) {
             download
             title="PDF Download"
           >
-            PDF
+            <PdfIcon />
           </a>
         )}
       </div>

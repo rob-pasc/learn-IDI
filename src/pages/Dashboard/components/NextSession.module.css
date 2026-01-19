@@ -3,6 +3,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    corner-shape: bevel round;
     box-shadow: var(--shadow-sm);
     overflow: hidden;
   }
@@ -238,4 +239,57 @@
       transform: translate(-50%, 0);
     }
   }
-}
+
+  /* Tablet & Compact View */
+  @media (max-width: 700px) {
+    .topLine {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .rightCol {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+      align-items: flex-start; 
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .countdownValue {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Mobile View */
+  @media (max-width: 480px) {
+    .header {
+      flex-direction: column-reverse; 
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .kindBadge {
+      align-self: flex-start; 
+    }
+
+    .actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btnPrimary, 
+    .btnGhost {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .toast {
+      width: 90%;
+      bottom: 1.5rem;
+      justify-content: center;
+    }
+  }
+} 

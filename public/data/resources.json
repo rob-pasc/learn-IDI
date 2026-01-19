@@ -14,7 +14,7 @@
       "id": "freecodecamp",
       "title": "freeCodeCamp Curriculum",
       "icon": "/icons/freecodecamp.svg",
-      "note": "freeCodeCamp bietet praxisnahe Tutorials und Projekte zu HTML, CSS, JavaScript, Datenbanken und vielem mehr.",
+      "note": "freeCodeCamp bietet praxisnahe Tutorials und Projekte zu Webdesign, Datenbanken und vielem mehr.",
       "url": "https://www.freecodecamp.org/learn/",
       "category": "general",
       "tags": ["tutorial", "web", "javascript", "projects"],

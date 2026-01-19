@@ -3,6 +3,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    corner-shape: bevel round;
     box-shadow: var(--shadow-sm);
     overflow: hidden;
   }
@@ -375,5 +376,87 @@
     padding: 0;
     margin: 0;
     z-index: 10;
+  }
+
+  /* Tablet & Compact View */
+  @media (max-width: 700px) {
+    .row {
+      grid-template-columns: 1fr; 
+      gap: 0.75rem;
+    }
+
+    .dateCol {
+      border-right: none;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-right: 0;
+      padding-bottom: 0.6rem;
+      min-height: auto;
+      
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .dateSub {
+      margin-top: 0;
+    }
+
+    .mainCol {
+      padding-top: 0.25rem;
+    }
+    
+    .metaLine {
+      align-items: flex-start;
+    }
+  }
+
+  /* Mobile View */
+  @media (max-width: 480px) {
+    .header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .toggle {
+      width: 100%;
+      display: flex;
+    }
+
+    .toggleBtn {
+      flex: 1; 
+      justify-content: center;
+    }
+
+    .monthNav {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* DOM Order is: [Prev] [Picker] [Today] [Next]
+       We want visually:
+       Row 1: [Prev] [Picker (stretched)] [Next]
+       Row 2: [Today (full width)]
+    */
+    .monthNav > :nth-child(1) { order: 1; } /* Prev Button */
+    .monthNav > :nth-child(2) { order: 2; flex: 1; } /* Picker Div */
+    .monthNav > :nth-child(4) { order: 3; } /* Next Button */
+    
+    .monthNav > :nth-child(3) { 
+      order: 4; 
+      width: 100%; 
+      margin-top: 0.25rem; 
+    }
+
+    .monthPillBtn {
+      min-width: 0; 
+      width: 100%;
+      padding-inline: 0.25rem; 
+    }
+
+    .todayBtn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 }

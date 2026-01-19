@@ -3,6 +3,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    corner-shape: bevel round;
     box-shadow: var(--shadow-sm);
     padding: var(--space-4);
     display: flex;

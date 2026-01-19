@@ -77,7 +77,13 @@ export default function MaterialsPage() {
 
     let list = baseList.filter((it) => {
       // Type filter
-      if (typeFilters.size > 0 && !typeFilters.has(it.type)) return false;
+      if (typeFilters.size > 0) {
+        const matchesType = typeFilters.has(it.type);
+        // Prüfen, ob nach PDF gefiltert wird UND ob das Item ein PDF besitzt
+        const matchesPdfVariant = typeFilters.has("pdf") && !!it.paths?.pdf;
+
+        if (!matchesType && !matchesPdfVariant) return false;
+      }
 
       // Search
       if (!q) return true;
@@ -102,7 +108,15 @@ export default function MaterialsPage() {
   const countsByType = useMemo(() => {
     const c = { md: 0, sql: 0, zip: 0, pdf: 0 };
     for (const it of baseList) {
+      // 1. Zähle das Item zu seinem Haupt-Typ (z.B. 'md' oder 'sql')
       if (c[it.type] !== undefined) c[it.type] += 1;
+
+      // 2. SPEZIALFALL: Wenn das Item nicht vom Typ 'pdf' ist, aber 
+      //    trotzdem einen PDF-Pfad besitzt (z.B. Cheatsheets), 
+      //    dann erhöhe auch den PDF-Zähler.
+      if (it.type !== 'pdf' && it.paths?.pdf) {
+        c.pdf += 1;
+      }
     }
     return c;
   }, [baseList]);

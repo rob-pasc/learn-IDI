@@ -29,7 +29,7 @@ export default function CourseTabs({
             >
               <div className={styles.top}>
                 <span className={styles.label}>{c.labelDE}</span>
-                <span className={styles.badge}>Sem {c.semester}</span>
+                <span className={styles.badge}>Sem{c.semester}</span>
               </div>
 
               <div className={styles.bottom}>
