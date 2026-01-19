@@ -9,7 +9,7 @@
     box-shadow: var(--shadow-sm);
   }
 
-  .button {
+  /* .button {
     width: 38px;
     height: 38px;
     border-radius: 999px;
@@ -29,6 +29,6 @@
   .active {
     background: var(--primary-soft);
     border-color: var(--primary-soft-border);
-  }
+  } */
 }
 

@@ -1,3 +1,5 @@
+// This file is for time-related js helper functions
+
 export function timeSlotForWeekday(weekday) {
   if (!weekday) return null;
 

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import styles from "./PreviewModal.module.css";
 import MarkdownPreview from "./MarkdownPreview";
 import SqlPreview from "./SqlPreview";
+import Button from "../../../components/ui/Button";
 
 export default function PreviewModal({ item, onClose }) {
   const [text, setText] = useState("");
@@ -59,17 +60,40 @@ export default function PreviewModal({ item, onClose }) {
           </div>
 
           <div className={styles.headRight}>
-            <a className={styles.btnGhost} href={item.paths?.main} download>
+            {/* <a className={styles.btnGhost} href={item.paths?.main} download>
               Download
-            </a>
-            {isMd && item.paths?.pdf && (
+            </a> */}
+            <Button 
+               variant="ghost" 
+               href={item.paths?.main} 
+               download
+            >
+              Download
+            </Button>
+            {/* {isMd && item.paths?.pdf && (
               <a className={styles.btnGhost} href={item.paths.pdf} download>
                 PDF
               </a>
+            )} */}
+            {isMd && item.paths?.pdf && (
+              <Button 
+                 variant="ghost" 
+                 href={item.paths.pdf} 
+                 download
+              >
+                PDF
+              </Button>
             )}
-            <button className={styles.btnClose} onClick={onClose} type="button">
+            {/* <button className={styles.btnClose} onClick={onClose} type="button">
               ✕
-            </button>
+            </button> */}
+            <Button 
+              variant="icon" 
+              onClick={onClose}
+              aria-label="Schließen"
+            >
+              ✕
+            </Button>
           </div>
         </header>
 

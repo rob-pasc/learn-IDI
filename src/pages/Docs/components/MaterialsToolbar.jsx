@@ -1,3 +1,4 @@
+import Button from "../../../components/ui/Button";
 import styles from "./MaterialsToolbar.module.css";
 
 export default function MaterialsToolbar({
@@ -28,14 +29,21 @@ export default function MaterialsToolbar({
           </div>
         </div>
 
-        <button
+        {/* <button
           type="button"
           className={styles.clearBtn}
           onClick={clearFilters}
           disabled={!hasFilters}
         >
           Zurücksetzen
-        </button>
+        </button> */}
+        <Button
+          variant="ghost"
+          onClick={clearFilters}
+          disabled={!hasFilters}
+        >
+          Zurücksetzen
+        </Button>
       </div>
 
       <div className={styles.controls}>
@@ -50,26 +58,54 @@ export default function MaterialsToolbar({
         </div>
 
         <div className={styles.typeRow} aria-label="Dateityp Filter">
-          <TypeChip
+          <Button 
+            variant="chip" 
+            active={typeFilters.has("md")} 
+            onClick={() => toggleType("md")}
+          >
+            MD ({countsByType.md ?? 0})
+          </Button>
+          {/* <TypeChip
             label={`MD (${countsByType.md ?? 0})`}
             active={typeFilters.has("md")}
             onClick={() => toggleType("md")}
-          />
-          <TypeChip
+          /> */}
+          <Button 
+            variant="chip" 
+            active={typeFilters.has("sql")} 
+            onClick={() => toggleType("sql")}
+          >
+            SQL ({countsByType.sql ?? 0})
+          </Button>
+          {/* <TypeChip
             label={`SQL (${countsByType.sql ?? 0})`}
             active={typeFilters.has("sql")}
             onClick={() => toggleType("sql")}
-          />
-          <TypeChip
+          /> */}
+          <Button 
+            variant="chip" 
+            active={typeFilters.has("zip")} 
+            onClick={() => toggleType("zip")}
+          >
+            ZIP ({countsByType.zip ?? 0})
+          </Button>
+          {/* <TypeChip
             label={`ZIP (${countsByType.zip ?? 0})`}
             active={typeFilters.has("zip")}
             onClick={() => toggleType("zip")}
-          />
-          <TypeChip
+          /> */}
+          <Button 
+            variant="chip" 
+            active={typeFilters.has("pdf")} 
+            onClick={() => toggleType("pdf")}
+          >
+            PDF ({countsByType.pdf ?? 0})
+          </Button>
+          {/* <TypeChip
             label={`PDF (${countsByType.pdf ?? 0})`}
             active={typeFilters.has("pdf")}
             onClick={() => toggleType("pdf")}
-          />
+          /> */}
         </div>
 
         <div className={styles.sortWrap}>
@@ -92,15 +128,15 @@ export default function MaterialsToolbar({
   );
 }
 
-function TypeChip({ label, active, onClick }) {
-  return (
-    <button
-      type="button"
-      className={`${styles.typeChip} ${active ? styles.typeChipActive : ""}`}
-      onClick={onClick}
-      aria-pressed={active}
-    >
-      {label}
-    </button>
-  );
-}
+// function TypeChip({ label, active, onClick }) {
+//   return (
+//     <button
+//       type="button"
+//       className={`${styles.typeChip} ${active ? styles.typeChipActive : ""}`}
+//       onClick={onClick}
+//       aria-pressed={active}
+//     >
+//       {label}
+//     </button>
+//   );
+// }
